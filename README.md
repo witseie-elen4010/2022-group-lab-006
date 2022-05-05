@@ -4,3 +4,4 @@
 
 - James Zungunde
 - Stallon Matindike
+- Sandile Kunene
