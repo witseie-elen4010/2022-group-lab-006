@@ -1,4 +1,6 @@
- # Competitive Wordle G6
+# Competitive Wordle G6
 
- ## Code Contributors
-* James Zungunde
+## Code Contributors
+
+- James Zungunde
+- Stallon Matindike
