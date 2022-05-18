@@ -1,4 +1,5 @@
 // To open server go to your browser and type in "localhost:3000"
+'use strict'
 
 const http = require('http')
 const server = http.createServer((req,res)=>{
