@@ -14,3 +14,25 @@ body {
 hr {
   width: 800px;
 }
+
+#gameBoard {
+  width: 350px;
+  height: 420px;
+  margin: 0 auto;
+  margin-top: 3px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.block {
+  color: black;
+  font-size: 36px;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid pink;
+  width: 60px;
+  height: 60px;
+  margin: 2.5px;
+}
