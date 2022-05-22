@@ -2,6 +2,9 @@
 
 const numberOfRows = 6; //gives number of trials
 let numberOfColumns = 5; // gives the length of the word guessed
+let isGameOver = false;
+let row = 0; //current guess (attempt number)
+let column = 0; // current letter for attempt
 
 window.onload = function () {
   initialize();
@@ -17,5 +20,46 @@ function initialize() {
 
       document.getElementById("gameBoard").appendChild(block);
     }
+  }
+}
+
+document.addEventListener("keyup", (e) => {
+  if (isGameOver) return;
+
+  //alert(e.code);
+  if ("KeyA" <= e.code && e.code <= "KeyZ") {
+    if (column < numberOfColumns) {
+      const currentBlock = document.getElementById(
+        row.toString() + "-" + column.toString()
+      );
+      if (currentBlock.innerText == "") {
+        currentBlock.innerText = e.code[3];
+        column += 1;
+      }
+    }
+  } else if (e.code == "Backspace") {
+    if (column > 0 && column <= numberOfColumns) {
+      column -= 1;
+    }
+    const currentBlock = document.getElementById(
+      row.toString() + "-" + column.toString()
+    );
+    currentBlock.innerText = "";
+  } else if (e.code == "Enter") {
+    update();
+    row += 1; //start new row
+    column = 0;
+  }
+
+  if (!isGameOver && row == numberOfRows) {
+    isGameOver = true;
+  }
+});
+
+function update() {
+  for (let i = 0; i < numberOfColumns; i++) {
+    const currentBlock = document.getElementById(
+      row.toString() + "-" + i.toString()
+    );
   }
 }
