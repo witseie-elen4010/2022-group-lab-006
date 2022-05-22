@@ -2,9 +2,12 @@
 
 const numberOfRows = 6; //gives number of trials
 let numberOfColumns = 5; // gives the length of the word guessed
-let isGameOver = false;
+
 let row = 0; //current guess (attempt number)
 let column = 0; // current letter for attempt
+
+let isGameOver = false;
+let word = "APPLE";
 
 window.onload = function () {
   initialize();
@@ -57,9 +60,28 @@ document.addEventListener("keyup", (e) => {
 });
 
 function update() {
+  let correct = 0;
   for (let i = 0; i < numberOfColumns; i++) {
     const currentBlock = document.getElementById(
       row.toString() + "-" + i.toString()
     );
+
+    let letter = currentBlock.innerText;
+
+    //a letter is in correct position
+    if (word[i] == letter) {
+      currentBlock.classList.add("wordCorrect");
+      correct += 1;
+    } // all letters are in the word in correct positions
+    else if (word.includes(letter)) {
+      currentBlock.classList.add("inTheWord");
+    } //letter is in not in the word
+    else {
+      currentBlock.classList.add("notInWord");
+    }
+
+    if (correctWord == numberOfColumns) {
+      isGameOver = true;
+    }
   }
 }
