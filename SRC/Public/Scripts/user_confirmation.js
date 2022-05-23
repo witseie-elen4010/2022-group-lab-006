@@ -59,11 +59,84 @@ function email_validation(email) //validating the email format
 {
    return /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email);
 }
+
+function password_validation()
+ {
+       //validating password requirements
+
+    if(password1.value.match(/[0-9]/)) //password can contain from 0 to 9
+    {
+        number.style.color = 'green';
+    }
+    else{
+        number.style.color = 'red';
+    }
+    //password must contain special case
+    if(password1.value.match(/[!\@\#\$\%\^\&\*\(\)\-\_\+\=\~\?\.\,\?\<\>\{\}\\]/)) 
+    {
+        special_char.style.color = 'green';
+    }
+    else{
+        special_char.style.color = 'red';
+    }
+
+    //checking upper cases in the password
+    if(password1.value.match(/[A-Z]/))//
+    {
+        uppercase.style.color = 'green';
+    }
+    else{
+        uppercase.style.color = 'red';
+    }
+
+    //checking lower cases in the password
+    if(password1.value.match(/[a-z]/))//
+    {
+        lowercase.style.color = 'green';
+    }
+    else{
+        lowercase.style.color = 'red';
+    }
+
+    //checking password length
+    
+    if(password1.value.length<7) //password must have atleast 7 characters
+    {
+        len.style.color = 'red';
+    }
+    else{
+        len.style.color = 'green';
+    }
+
+
+    //validating password2
+    if(password2.value.trim()==="")
+    {
+        on_error(password2,"Please enter password")
+    }
+    else
+    {
+        if(password1.value.trim()!==password2.value.trim())
+        {
+            on_error(password2, "Passwords do not match")
+
+        }
+        else
+        {
+            on_success(password2)
+        }
+    }
+
+
+
+ }
 function validate_input() //input validation
 {
 
     username_validation();
-    
+    password_validation();
+
+
        //validating the format of the email and that email is not empty
       if (email.value.trim() === "") {
         on_error(email, "Enter email");
