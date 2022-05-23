@@ -5,7 +5,7 @@
     .image {
     display: table-cell;
     width: auto;
-    background: url(../images/Wordle_196_example.svg.png);
+    background: url("Wordle_196_example.svg.png");
     background-size: cover
     }
     .form-container {

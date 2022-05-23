@@ -5,7 +5,7 @@
     .image {
     display: table-cell;
     width: auto;
-    background: url("../images/Sample_User_Icon.png");
+    background: url("/SRC/Public/images/Sample_User_Icon.png");
     background-size: cover
     }
     /*hide the error message if nothing happens*/

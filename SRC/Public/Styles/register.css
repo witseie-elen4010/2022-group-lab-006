@@ -6,7 +6,7 @@
     .image {
     display: table-cell;
     width: auto;
-    background: url("../images/Wordle_196_example.svg.png");
+    background: url("/SRC/Public/images/Wordle_196_example.svg.png");
     background-size: cover
     }
 
