@@ -10,12 +10,19 @@
     background-size: cover
     }
 
+
     .form-container {
     display: table;
     max-width: 900px;
     width: 100%;
     margin: 0 auto;
     box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1)
+    }
+    /*hidded error message*/
+    .form-container small{
+        visibility: hidden;
+        position: absolute;
+        margin: 3px;
     }
     
     form {
