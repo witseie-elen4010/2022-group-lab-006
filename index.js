@@ -2,7 +2,17 @@
 
 const path = require("path");
 const express = require("express");
+const mongoose = require('mongoose');
 const app = express();
+
+// connect to mango DB
+const mangoDB = 'mongodb+srv://Group-6:Group6@users.xqmpw.mongodb.net/Users?retryWrites=true&w=majority';
+
+//using mangoose to interact with mangoDB Database
+mongoose.connect(mangoDB)
+  .then((result) => console.log('connected to Database'))
+  //.then((result) => app.listen(3000))  
+  .catch((err)=> console.log(err))
 
 const mainRouter = require("./SRC/Routes/mainRoutes");
 
