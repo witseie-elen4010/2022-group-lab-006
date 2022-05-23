@@ -2,21 +2,39 @@
 <html>    
 <head>    
     <title>Register Form</title>    
-    <link rel="stylesheet" type="text/css" href="../Public/Styles/register.css">    
+    <link rel="stylesheet" type="text/css" href="../Public/Styles/register.css">  
+    <script defer src="../Public/Scripts/user_confirmation.js"></script>  
 </head>   
 <body>
 <div class="register-photo">
-    <div class="form-container">
+    <div class="form-container" id="form" class="form">
     <div class="image"></div>
     <form method="post">
     <h2 class="text-center"><strong>Create</strong> an account.</h2>
-    <div class="form-group"><input class="form-control" type="username" name="username" placeholder="Username"></div>
-    <div class="form-group"><input class="form-control" type="email" name="email" placeholder="Email"></div>
-    <div class="form-group"><input class="form-control" type="password" name="password" placeholder="Password"></div>
-    <div class="form-group"><input class="form-control" type="password" name="password-repeat" placeholder="Password (repeat)"></div>
+    <div class="form-group">
+        <input class="form-control" id="username" type="username" name="username" placeholder="Username" required>
+    
+        <small>Error message</small>
+    </div>
+    <div class="form-group">
+        <input class="form-control" type="email" name="email" placeholder="Email" required>
+    
+        <small>Error message</small>
+    </div>
+    <div class="form-group">
+        <input class="form-control" type="password" name="password" placeholder="Password" required>
+    
+        <small>Error message</small>
+    </div>
+    <div class="form-group">
+        <input class="form-control" type="password" name="password-repeat" placeholder="Password (repeat)" required>
+    
+        <small>Error message</small>
+    </div>
     <div class="form-group">
     <br><br>
     <input type="submit" name="registerButton" id="registerButton" value="Create Account"> 
+
     <br><br>
     <a class="linkText" href="../Views/login.html">Already have an account? Login.</a>
     </form>
