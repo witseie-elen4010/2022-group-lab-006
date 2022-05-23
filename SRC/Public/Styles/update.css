@@ -8,6 +8,12 @@
     background: url("../images/Sample_User_Icon.png");
     background-size: cover
     }
+    /*hide the error message if nothing happens*/
+    .form-container small{
+        visibility: hidden;
+        position: absolute;
+        margin: 3px;
+    }
     .form-container {
     display: table;
     max-width: 900px;

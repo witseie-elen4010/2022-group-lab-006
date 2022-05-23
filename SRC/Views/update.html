@@ -1,5 +1,8 @@
 <!DOCTYPE html>  
-<html>     
+<html>  
+    <header>
+        <script defer src="../Public/Scripts/user_confirmation.js"></script>  
+    </header>   
 <body>
     <div class="topnav">
         <link rel="stylesheet" type="text/css" href="../Public/Styles/home.css">
@@ -13,10 +16,30 @@
     <div class="image"></div>
     <form method="get" action="../HTML/home.html">
     <h2 class="text-center"><strong>Update</strong> your account details.</h2>
-    <div class="form-group"><input class="form-control" type="username" name="username" placeholder="Username"></div>
-    <div class="form-group"><input class="form-control" type="email" name="email" placeholder="email"></div>
-    <div class="form-group"><input class="form-control" type="password" name="password" placeholder="Password"></div>
-    <div class="form-group"><input class="form-control" type="password" name="npassword" placeholder="New Password"></div>
+    <div class="form-group">
+        <input class="form-control" id="username" type="username" name="username" placeholder="Username" required onkeyup="return validate_input()">
+    
+        <small>Error message</small>
+        <div class="uname_requirements">
+            <ul>
+                <li id="uname_len">Must be atleast 4 or less than 20 characters</li>
+                
+            </ul>
+        </div>
+    </div>
+    <div class="form-group">
+        <input class="form-control" type="email" name="email" placeholder="email">
+    
+    </div>
+    <div class="form-group">
+        <input class="form-control" type="password" name="password" placeholder="Password">
+    
+    </div>
+    <div class="form-group">
+        
+        <input class="form-control" type="password" name="npassword" placeholder="New Password">
+    
+    </div>
     <div class="form-group">
     </div>
     <br><br>
