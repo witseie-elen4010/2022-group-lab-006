@@ -40,6 +40,15 @@ function username_validation() //validation username
         on_success(username);
 
     }
+    if(username.value.length<4 || username.value.length >=20) //password must have atleast 7 characters
+    {
+        uname_len.style.color = 'red';
+    }
+    else{
+
+        uname_len.style.color = 'green';
+
+    }
 
 
 }
