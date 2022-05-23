@@ -52,10 +52,34 @@ function username_validation() //validation username
 
 
 }
+
+
+
+function email_validation(email) //validating the email format
+{
+   return /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email);
+}
 function validate_input() //input validation
 {
 
     username_validation();
+    
+       //validating the format of the email and that email is not empty
+      if (email.value.trim() === "") {
+        on_error(email, "Enter email");
+
+    }
+    else {
+        if(!email_validation(email.value.trim()))
+        {
+            on_error(email,"Email is not valid")
+        }
+        else
+        {
+            on_success(email);
+        }
+        
+    }
    
   
 }
