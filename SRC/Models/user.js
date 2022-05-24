@@ -1,3 +1,5 @@
+"use strict";
+
 const mongoose = require('mongoose')
 const schema = mongoose.Schema
 const hashing = require('bcrypt')
@@ -5,16 +7,12 @@ const userSchema = new schema({
     username: {
         type: String,
         required: true,
-        //lowercase: true,
-        //uppercase: true,
-        //unique: true,
+        
     },
     password: {
         type: String,
         required: true,
-        //lowercase: true,
-        //uppercase: true,
-        //unique: true,
+        
     },
     email: {
         type: String,
@@ -36,6 +34,7 @@ userSchema.pre('save', async function (next) {
        next(err) 
     }
 })
+
 
 userSchema.methods.comparePassword = async function (password) {
     if(!password) throw new Error('Password is missing')
