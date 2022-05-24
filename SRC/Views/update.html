@@ -4,22 +4,22 @@
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">  
-        <script defer src="../Public/Scripts/user_confirmation.js"></script>  
-        <link rel="stylesheet" type="text/css" href="../Public/Styles/home.css">
-        <link rel="stylesheet" type="text/css" href="../Public/Styles/update.css"> 
+        <script defer src="/SRC/Public/Scripts/user_confirmation.js"></script>  
+        <link rel="stylesheet" type="text/css" href="/SRC/Public/Styles/home.css">
+        <link rel="stylesheet" type="text/css" href="/SRC/Public/Styles/update.css"> 
     </head>   
 <body>
     <div class="topnav">
         
-        <a class="active" href="../Views/home.html">Home</a>
-        <a href="../Views/update.html">Update Info</a>
+        <a class="active" href="/">Home</a>
+        <a href="/update">Update Info</a>
         <a href="#rules">Rules</a>
       </div>   
 <div class="login-photo">
     
     <div class="form-container">
     <div class="image"></div>
-    <form method="get" action="../HTML/home.html">
+    <form method="get" action="/">
     <h2 class="text-center"><strong>Update</strong> your account details.</h2>
     <div class="form-group">
         <input class="form-control" id="username" type="username" name="username" placeholder="Username" required onkeyup="return validate_input()">
@@ -59,7 +59,7 @@
     <div class="form-group">
     </div>
     <br><br>
-    <button type="submit" name="updateButton" id="updateButton" value="Update">Update</button>
+    <input type="submit" name="updateButton" id="updateButton" value="Update">
     <br><br>
     </form>
     </div>

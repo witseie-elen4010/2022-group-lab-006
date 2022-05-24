@@ -35,4 +35,9 @@ mainRouter.get("/multiplayer", function (req, res) {
   res.sendFile(path.join(__dirname, "..", "Views", "multiPlayer.html"));
 });
 
+// Route for the Multiplayer Page
+mainRouter.get("/rules", function (req, res) {
+  res.sendFile(path.join(__dirname, "..", "Views", "rules.html"));
+});
+
 module.exports = mainRouter;
