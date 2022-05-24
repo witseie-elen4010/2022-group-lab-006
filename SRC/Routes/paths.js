@@ -6,4 +6,4 @@ function about(req, res) {
   res.sendFile(path.join(__dirname, "..", "Views", "singlePlayer.html"));
 }
 
-module.exports = { singlePlayer };
+module.exports = { login };
