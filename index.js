@@ -9,7 +9,7 @@ const Users = require('./SRC/Models/user')
 const hashing = require('bcrypt')
 
 // connect to mango DB
-const mangoDB = 'mongodb+srv://Group6:Group6@cluster0.zquzm.mongodb.net/?retryWrites=true&w=majority';
+const mangoDB = 'mongodb://mongodb-group-6:e0kJieT4LjeSE9Hr8ERriujxAAFPhIWD9Olv3onHO21zshBtm74XuOW7oZRCkegC7o4K3HzVnk2yf9OurMuZuA%3D%3D@mongodb-group-6.mongo.cosmos.azure.com:10255/?ssl=true&retrywrites=false&maxIdleTimeMS=120000&appName=@mongodb-group-6@';
 
 //using mangoose to interact with mangoDB Database
 mongoose.connect(mangoDB)
