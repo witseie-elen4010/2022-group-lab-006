@@ -26,7 +26,7 @@ function initialize() {
   }
 }
 
-document.addEventListener("keyup", (e) => {
+document.addEventListener("click", (e) => {
   if (isGameOver) return;
 
   //alert(e.code);
