@@ -6,33 +6,31 @@ const mongoose = require('mongoose');
 const app = express();
 const bodyParser = require("body-parser")
 const Users = require('./SRC/Models/user')
-
-
+const hashing = require('bcrypt')
 
 // connect to mango DB
 const mangoDB = 'mongodb+srv://Group6:Group6@cluster0.zquzm.mongodb.net/?retryWrites=true&w=majority';
 
 //using mangoose to interact with mangoDB Database
 mongoose.connect(mangoDB)
-  .then((result) => console.log('connected to Database'))
-  //.then((result) => app.listen(3000))  
+  .then((result) => console.log('connected to Database')) 
   .catch((err) => console.log(err))
 
 
 const mainRouter = require("./SRC/Routes/mainRoutes");
 
+
 app.use(mainRouter);
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use("/SRC/Public/Styles", express.static(__dirname + "/SRC/Public/Styles"));
-//app.use(express.json())
 app.use(
   "/SRC/Public/Scripts",
   express.static(__dirname + "/SRC/Public/Scripts")
 );
 
 // Function for validating user login credentials
-const check = async function (username, password, res) {
+const check = async function (username, password) {
   const user = await Users.findOne({ username: username });
   if (user == null) {
     return false
@@ -43,9 +41,28 @@ const check = async function (username, password, res) {
     if (match == true) {
       return true
     } else {
-      return true
+      return false
     }
+  }
+}
 
+// Function for updating user login credentials
+const updateDetails = async function (username, password, newPassword) {
+  const user = await Users.findOne({ username: username });
+  if (user == null) {
+    return false
+  }
+  else {
+    const match = await user.comparePassword(password);
+    console.log(match);
+    if (match == true) {
+      const saltRounds = await hashing.genSalt(12)
+      const passwordHashed = await hashing.hash(newPassword,saltRounds)
+      const user = await Users.updateOne({username:username},{$set:{password: passwordHashed}});
+      return true
+    } else {
+      return false
+    }
   }
 }
 
@@ -53,8 +70,6 @@ const check = async function (username, password, res) {
 app.post("/", function (req, res) {
   const username = req.body.username;
   const password = req.body.password;
-  //console.log(username)
-  //console.log(password)
   const valid=check(username,password)
      .then((result) => {
         if(result == true)
@@ -68,8 +83,27 @@ app.post("/", function (req, res) {
          console.log(err)
          res.sendFile(__dirname + '/SRC/views/login.html')
      })
+});
+
+//function to update login details using Database
+app.post("/update", function (req, res) {
+  const username = req.body.username;
+  const currentPassword = req.body.password;
+  const newPassword = req.body.npassword;
+  const valid=updateDetails(username,currentPassword,newPassword)
+     .then((result) => {
+        if(result == true)
+        {
+          res.sendFile(__dirname + '/SRC/views/login.html')
+        }else{
+          res.sendFile(__dirname + '/SRC/views/update.html')
+        }
+     })
+     .catch((err) =>{
+         console.log(err)
+         res.sendFile(__dirname + '/SRC/views/login.html')
+     })
   console.log('we are out of the loop')
-  
 });
 
 // Function to store user details after registration
@@ -85,14 +119,14 @@ app.post("/register", function (req, res) {
   })
   user.save()
     .then((result) => {
-      //res.send(result)
       res.sendFile(__dirname + '/SRC/views/login.html')
     })
     .catch((err) => {
       console.log(err)
     })
-  //res.sendFile(path.join(__dirname, "..", "Views", "register.html"));
 });
+
+
 
 module.exports = app;
 
