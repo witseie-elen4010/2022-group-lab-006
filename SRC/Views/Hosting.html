@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Competitive Wordle G6</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=0,user-scalable=no"
+    />
+    <link rel="stylesheet" href="/SRC/Public/Styles/Hosting.css" />
+  </head>
+
+  <body>
+    <h1 id="title">Game Hosting</h1>
+    <hr />
+    <br />
+    <p>
+      Welcome to the hosting room! Here you can create game id, that other
+      players can use to join the game and setup the game.
+    </p>
+    <br />
+
+    <div class="button-wrapper">
+      <a href="">
+        <button id="Button">Create Meeting ID</button>
+      </a>
+      <br />
+      <h1>Game Setup</h1>
+
+      <label id="playerNum">Number of players</label><br />
+      <br />
+      <input input="number" id="Players" />
+      <button type="button" id="myButton">Submit</button>
+      <br />
+      <br />
+      <br />
+      <label id="playerNum">Multiplayer Mode</label><br />
+      <p id="mode">
+        Mode 1: all players guess a word provided by the computer.
+      </p>
+      <p id="mode">
+        Mode 2: One player choose a word and other players guess it.
+      </p>
+
+      <a href="">
+        <button id="Button">Mode1</button>
+      </a>
+      <a href="">
+        <button id="Button">Mode2</button>
+      </a>
+    </div>
+    <script src="/SRC/Public/Scripts/Hosting.js"></script>
+  </body>
+</html>

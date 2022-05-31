@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Register Form</title>
+    <link rel="stylesheet" type="text/css" href="/SRC/Public/Styles/register.css">
+    <script defer src="/SRC/Public/Scripts/user_confirmation.js"></script>
+</head>
+
+<body>
+    <div class="register-photo">
+        <div class="form-container" id="form" class="form">
+            <div class="image"></div>
+            <form action="/register" method="post">
+                <h2 class="text-center"><strong>Create</strong> an account.</h2>
+                <div class="form-group">
+                    <input class="form-control" id="username" type="username" name="username" placeholder="Username"
+                        required onkeyup="return validate_input()">
+                    <small>Error message</small>
+                    <div class="uname_requirements">
+                        <ul>
+                            <!--username requirements-->
+                            <li id="uname_len">Must be atleast 4 or less than 20 characters</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <input class="form-control" id="email" type="email" name="email" placeholder="Email" required
+                        onkeyup="return validate_input()">
+
+                    <small>Error message</small>
+                </div>
+                <div class="form-group">
+                    <input class="form-control" id="password1" type="password" name="password" placeholder="Password"
+                        required onkeyup="return validate_input()">
+
+                    <small>Error message</small>
+                    <div class="password_requirements">
+                        <ul>
+                            <!--password requirements-->
+                            <li id="length_">atleast 7 characters</li>
+                            <li id="lower">must contain lowercase</li>
+                            <li id="upper">must contain uppercase</li>
+                            <li id="number">must contain atleast 1 number</li>
+                            <li id="special_char">must contain special character</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <input class="form-control" id="password2" type="password" name="password-repeat"
+                        placeholder="Password (repeat)" required>
+
+                    <small>Error message</small>
+                </div>
+                <div class="form-group">
+                    <br><br>
+                    <input type="submit" name="registerButton" id="registerButton" value="Create Account">
+                    <br><br>
+                    <a class="linkText" href="/">Already have an account? Login.</a>
+            </form>
+        </div>
+    </div>
+</body>
