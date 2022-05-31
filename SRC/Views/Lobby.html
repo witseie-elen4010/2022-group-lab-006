@@ -16,32 +16,37 @@
     <hr />
     <br />
     <p>
-      Welcome to the lobby! Here you can inivite other players, accept player
+      Welcome to the lobby! Here you can invite other players, accept player
       requests, set the type of multiplayer mode game and decide on the number
       of players you want to be involved in the game
     </p>
     <br />
     <br />
     <br />
-    <br />
-    <br />
-    <br />
-    <br />
-    <br />
     <div class="button-wrapper">
-      <a href="singlePlayer">
+      <a href="">
         <button id="Button">Create Meeting ID</button>
       </a>
       <br />
+      <h1>Game Setup</h1>
+
+      <label id="playerNum">Number of players</label><br />
       <br />
-      <label id="playerNum">Number of Players:</label><br />
-      <input input="number" id "Players">
+      <input input="number" id="Players" />
       <button type="button" id="myButton">Submit</button>
       <br />
       <br />
-      <a href="multiPlayer">
-        <button id="Button">Game Room</button>
+      <br />
+      <label id="playerNum">Multiplayer Mode</label><br />
+      <br />
+      <br />
+      <a href="">
+        <button id="Button">Mode1</button>
+      </a>
+      <a href="">
+        <button id="Button">Mode2</button>
       </a>
     </div>
+    <script src="/SRC/Public/Scripts/gameLobby.js"></script>
   </body>
 </html>

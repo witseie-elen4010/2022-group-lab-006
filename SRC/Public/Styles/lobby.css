@@ -26,6 +26,24 @@ p {
   color: white;
 }
 
+#myButton {
+  width: 100px;
+  height: 22px;
+  border: none;
+  border-radius: 17px;
+  padding-left: 5px;
+  background: lightblue;
+  color: black;
+}
+
+#Players {
+  margin-left: 2rem;
+}
+
+#myButton:hover {
+  background-color: green;
+}
+
 #Button {
   width: 150px;
   height: 40px;
@@ -37,6 +55,17 @@ p {
 }
 #Button:hover {
   background-color: green;
+}
+
+h1 {
+  color: white;
+}
+
+#playerNum {
+  color: magenta;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-size: 19px;
+  margin-left: 1rem;
 }
 
 #Button:active {
