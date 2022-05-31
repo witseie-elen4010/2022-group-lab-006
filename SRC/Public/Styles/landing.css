@@ -46,3 +46,24 @@
       color: black;
       margin-bottom: 30px
       }
+      .column2 {
+        float: left;
+        width: 50%;
+        text-align: center;
+        background: url(https://coolbackgrounds.io/images/backgrounds/index/aqua-d9b59c89.png);
+        background-size: cover
+      }
+      .column1 {
+        float: left;
+        width: 50%;
+        text-align: center;
+        background: url(https://wallpapercave.com/uwp/uwp762796.png);
+        background-size: cover
+      }
+      
+      /* Clear floats after the columns */
+      .row:after {
+        content: "";
+        display: table;
+        clear: both;
+      }
