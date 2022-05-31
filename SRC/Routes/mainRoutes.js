@@ -21,9 +21,13 @@ mainRouter.get("/singlePlayer", function (req, res) {
   
  
 });
-
-// Route for the login Page
+// Route for the landing Page
 mainRouter.get("/", function (req, res) {
+
+  res.sendFile(path.join(__dirname, "..", "Views", "landing.html"));
+});
+// Route for the login Page
+mainRouter.get("/login", function (req, res) {
 
   res.sendFile(path.join(__dirname, "..", "Views", "login.html"));
 });
