@@ -5,12 +5,11 @@ const express = require("express");
 const { check } = require("express-validator");
 const mainRouter = express.Router();
 
-
 mainRouter.get("/singlePlayer", function (req, res) {
   res.sendFile(path.join(__dirname, "..", "Views", "singlePlayer.html"));
 });
 
-// Route for the login Page 
+// Route for the login Page
 mainRouter.get("/", function (req, res) {
   res.sendFile(path.join(__dirname, "..", "Views", "login.html"));
 });
@@ -38,6 +37,10 @@ mainRouter.get("/multiplayer", function (req, res) {
 // Route for the Multiplayer Page
 mainRouter.get("/rules", function (req, res) {
   res.sendFile(path.join(__dirname, "..", "Views", "rules.html"));
+});
+
+mainRouter.get("/Hosting", function (req, res) {
+  res.sendFile(path.join(__dirname, "..", "Views", "Hosting.html"));
 });
 
 module.exports = mainRouter;
