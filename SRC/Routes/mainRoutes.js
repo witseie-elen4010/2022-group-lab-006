@@ -6,12 +6,26 @@ const { check } = require("express-validator");
 const mainRouter = express.Router();
 
 
+
+//route for the single player
 mainRouter.get("/singlePlayer", function (req, res) {
-  res.sendFile(path.join(__dirname, "..", "Views", "singlePlayer.html"));
+
+  if(user_login ==true)
+  {
+     res.sendFile(path.join(__dirname, "..", "Views", "singlePlayer.html"));
+  }
+  else if(user_login ==false)
+  {
+    res.sendFile(path.join(__dirname, "..", "Views", "login.html"));
+
+  }
+  
+ 
 });
 
 // Route for the login Page 
 mainRouter.get("/", function (req, res) {
+
   res.sendFile(path.join(__dirname, "..", "Views", "login.html"));
 });
 
@@ -27,6 +41,8 @@ mainRouter.get("/home", function (req, res) {
 
 // Route for the Update Page
 mainRouter.get("/update", function (req, res) {
+
+  
   res.sendFile(path.join(__dirname, "..", "Views", "update.html"));
 });
 

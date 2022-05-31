@@ -8,6 +8,9 @@ const bodyParser = require("body-parser")
 const Users = require('./SRC/Models/user')
 const hashing = require('bcrypt')
 
+//for checking if the user is logged in
+let user_login = false;
+
 // connect to mango DB
 const mangoDB = 'mongodb://mongodb-group-6:e0kJieT4LjeSE9Hr8ERriujxAAFPhIWD9Olv3onHO21zshBtm74XuOW7oZRCkegC7o4K3HzVnk2yf9OurMuZuA%3D%3D@mongodb-group-6.mongo.cosmos.azure.com:10255/?ssl=true&retrywrites=false&maxIdleTimeMS=120000&appName=@mongodb-group-6@';
 
@@ -75,26 +78,13 @@ app.post("/", function (req, res) {
 
         if(result == true)
         {
+          //if the user is logged in
+          user_login = true;
           res.sendFile(__dirname + '/SRC/views/home.html')
         }else{
           res.sendFile(__dirname + '/SRC/views/login.html')
         }
-        user_login =true;
-        if(user_login == true)
-        {
-          res.sendFile(__dirname + '/SRC/views/rules.html')
-          res.sendFile(__dirname + '/SRC/views/update.html')
-
-        }
-        else if(user_login==false)
-        {
-          return res.status(401).json({ message: "Not authorized" });
-
-        }
-
-
-
-
+      
      })
      .catch((err) =>{
          console.log(err)
