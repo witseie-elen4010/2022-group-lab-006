@@ -67,3 +67,11 @@
         display: table;
         clear: both;
       }
+      .header2 {
+        padding: 60px;
+        text-align: center;
+        background: #ffffff;
+        color: white;
+        font-size: 30px;
+      }
+      
