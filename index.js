@@ -72,12 +72,29 @@ app.post("/", function (req, res) {
   const password = req.body.password;
   const valid=check(username,password)
      .then((result) => {
+
         if(result == true)
         {
           res.sendFile(__dirname + '/SRC/views/home.html')
         }else{
           res.sendFile(__dirname + '/SRC/views/login.html')
         }
+        user_login =true;
+        if(user_login == true)
+        {
+          res.sendFile(__dirname + '/SRC/views/rules.html')
+          res.sendFile(__dirname + '/SRC/views/update.html')
+
+        }
+        else if(user_login==false)
+        {
+          return res.status(401).json({ message: "Not authorized" });
+
+        }
+
+
+
+
      })
      .catch((err) =>{
          console.log(err)
