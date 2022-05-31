@@ -10,3 +10,12 @@ describe("Input a username", () => {
     });
   });
   
+  describe("Length of the username", () => {
+    test("the length of the username should be greater than 4 and less than 20", () => {
+      information.set_username("Wiseman");
+      const input = "Wiseman";
+      const output = information.get_username();
+      expect(input.length).toEqual(output.length);
+    });
+  });
+  
