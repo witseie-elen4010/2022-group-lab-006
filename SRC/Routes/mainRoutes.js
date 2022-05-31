@@ -70,7 +70,16 @@ mainRouter.get("/multiplayer", function (req, res) {
 
 // Route for the Multiplayer Page
 mainRouter.get("/rules", function (req, res) {
-  res.sendFile(path.join(__dirname, "..", "Views", "rules.html"));
+  if(user_login ==true)
+  { 
+      res.sendFile(path.join(__dirname, "..", "Views", "rules.html"));
+
+  }
+  else if(user_login ==false)
+  {
+    res.sendFile(path.join(__dirname, "..", "Views", "login.html"));
+  }
+
 });
 
 module.exports = mainRouter;
