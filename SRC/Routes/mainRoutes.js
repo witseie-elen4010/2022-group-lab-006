@@ -42,8 +42,16 @@ mainRouter.get("/home", function (req, res) {
 // Route for the Update Page
 mainRouter.get("/update", function (req, res) {
 
+  if(user_login ==true)
+  { 
+     res.sendFile(path.join(__dirname, "..", "Views", "update.html"));
+  }
+  else if(user_login ==false)
+  {
+    res.sendFile(path.join(__dirname, "..", "Views", "login.html"));
+  }
   
-  res.sendFile(path.join(__dirname, "..", "Views", "update.html"));
+
 });
 
 // Route for the Multiplayer Page
