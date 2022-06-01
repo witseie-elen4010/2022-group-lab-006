@@ -18,15 +18,21 @@ module.exports =
         password1 = password_r;
     }
     ,
-    password_requirement: function (password_r) {
-       // password1.value.match(/[0-9]/)
-       // password1.value.match([/!\@\#\$\%\^\&\*\(\)\-\_\+\=\~\?\.\,\?\<\>\{\}\\/])
-       // password1.value.match(/[A-Z]/)
-       // password1.value.match(/[a-z]/)
-       // password1.value.trim() == "";
-    },
+
     get_password: function () {
         return password1
     },
+
+
+    set_email: function(email_r)
+    {
+        email= email_r
+
+    },
+    get_email: function() 
+    {
+        return email;
+    }
+
 
 }

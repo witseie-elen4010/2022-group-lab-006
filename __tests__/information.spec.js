@@ -68,5 +68,16 @@ describe("Check if the password contains a number, special char and letter", () 
     });
   });
 
+  describe("Check if the email format is correct", () => {
+    test("test email format if it has @  and .", () => {
+      information.set_email("software@dev3.com");
+      const input_email = "software@dev3.com";
+
+      const output_email = information.get_email();
+      expect(/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(input_email)).toEqual(/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(input_email));
+    });
+  });
+
+
 });
 
