@@ -37,7 +37,17 @@ describe("Input a username", () => {
         const output_password = information.get_password();
         expect(input_password.match([/!\@\#\$\%\^\&\*\(\)\-\_\+\=\~\?\.\,\?\<\>\{\}\\/])).toEqual(output_password.match([/!\@\#\$\%\^\&\*\(\)\-\_\+\=\~\?\.\,\?\<\>\{\}\\/]));
       });
-    })
+    });
+
+    describe("Check if the password contains a capital letter", () => {
+      test("test if the password contains a capital letter", () => {
+        information.set_password("2456Ku@");
+        const input_password = "2456Ku@";
+    
+        const output_password = information.get_password();
+        expect(input_password.match([/A-Z/])).toEqual(output_password.match([/A-Z/]));
+      });
+    });
 
   });
   
