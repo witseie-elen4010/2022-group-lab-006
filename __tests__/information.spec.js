@@ -19,3 +19,14 @@ describe("Input a username", () => {
     });
   });
   
+  describe("Check if the password contains a number, special char and letter", () => {
+    test("test if the password contains a number", () => {
+      information.set_password("2456Ku@");
+      const input_password = "2456Ku@";
+  
+      const output_password = information.get_password();
+      expect(input_password.match([/0-9/])).toEqual(output_password.match([/0-9/]));
+    });
+  
+  });
+  
