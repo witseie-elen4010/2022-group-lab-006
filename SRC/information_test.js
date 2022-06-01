@@ -20,9 +20,11 @@ module.exports =
     ,
     password_requirement: function (password_r) {
         password1.value.match(/[0-9]/)
+        password1.value.match([/!\@\#\$\%\^\&\*\(\)\-\_\+\=\~\?\.\,\?\<\>\{\}\\/])
     },
     get_password: function () {
         return password1
     },
+
 
 }
