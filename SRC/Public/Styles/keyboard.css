@@ -1,8 +1,9 @@
 .keyboard {
     position: fixed;
-    left:32%;
-    bottom: 50px;
-    width: 41.5%;
+    left:22%;
+    height:120px;
+    bottom: 0;
+    width: 850px;
     padding: 5px 0;
     background-color:#c5c8d4;
     box-shadow: 0 0 50px rgba(0, 0, 0, 0);
@@ -14,9 +15,9 @@
 }
 
 .keyboard__key{
-    height: 75px;
-    width: 12%;
-    max-width: 90px;
+    height: 30px;
+    width: 8%;
+    max-width: 60px;
     margin: 3px;
     border: radius 4px;
     border: none;
@@ -38,7 +39,7 @@
 }
 
 .keyboard__keys_long{
-    width: 24%;
+    width: 20%;
 }
 
 .keyboard__key--activatable::after {
