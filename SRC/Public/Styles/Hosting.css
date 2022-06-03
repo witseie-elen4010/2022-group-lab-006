@@ -126,4 +126,8 @@ h1 {
 #gameIdOutput {
   color: white;
   margin-top: -1em;
+  border: 5px solid #28c9ac;
+  text-align: centre;
+  width: 10%;
+  margin-left: 53.4em;
 }
