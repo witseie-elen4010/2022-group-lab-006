@@ -55,3 +55,11 @@ hr {
   border-color: white;
 }
 
+.Message {
+  color: red;
+  letter-spacing: 2px;
+  font-weight: bold;
+  font-size: 16px
+
+}
+
