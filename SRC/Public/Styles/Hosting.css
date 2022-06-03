@@ -1,5 +1,6 @@
 body {
   background-color: black;
+  text-align: center;
 }
 
 .hostInfor {
@@ -119,7 +120,7 @@ h1 {
 
 .game_id {
   text-align: right;
-  margin-top: -26em;
+  margin-top: -26.4em;
   margin-right: 46em;
 }
 

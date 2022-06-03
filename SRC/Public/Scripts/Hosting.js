@@ -5,7 +5,13 @@ document.getElementById("myButton").onclick = function () {
   console.log(numOfPlayers, "players");
 };
 
-document.getElementById("idButton").onclick = function () {
-  const gameID = 1845601;
-  document.getElementById("gameIdOutput").innerHTML = gameID;
-};
+const button = document.getElementById("idButton");
+
+button.addEventListener(
+  "click",
+  function () {
+    const gameID = 9875690;
+    document.getElementById("gameIdOutput").textContent = gameID;
+  },
+  false
+);
