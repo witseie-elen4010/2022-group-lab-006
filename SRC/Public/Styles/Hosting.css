@@ -1,6 +1,9 @@
 body {
-  text-align: center;
   background-color: black;
+}
+
+.hostInfor {
+  text-align: center;
 }
 
 #title {
@@ -62,8 +65,35 @@ p {
   background: lightblue;
   color: black;
 }
+
 #Button:hover {
   background-color: green;
+}
+
+#Button:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+#idButton {
+  width: 150px;
+  height: 40px;
+  border: none;
+  border-radius: 17px;
+  padding-left: 7px;
+  background: lightblue;
+  color: black;
+}
+
+#idButton:hover {
+  background-color: green;
+}
+
+#idButton:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
 }
 
 h1 {
@@ -77,16 +107,6 @@ h1 {
   margin-left: 1rem;
 }
 
-#Button:hover {
-  background-color: #3e8e41;
-}
-
-#Button:active {
-  background-color: #3e8e41;
-  box-shadow: 0 5px #666;
-  transform: translateY(4px);
-}
-
 #myButton:hover {
   background-color: #3e8e41;
 }
@@ -95,4 +115,15 @@ h1 {
   background-color: #3e8e41;
   box-shadow: 0 5px #666;
   transform: translateY(4px);
+}
+
+.game_id {
+  text-align: right;
+  margin-top: -26em;
+  margin-right: 46em;
+}
+
+#gameIdOutput {
+  color: white;
+  margin-top: -1em;
 }
