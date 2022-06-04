@@ -48,7 +48,7 @@ const check = async function (username, password) {
     }
   }
 }
-
+ 
 // Function for updating user login credentials
 const updateDetails = async function (username, password, newPassword) {
   const user = await Users.findOne({ username: username });
@@ -69,13 +69,14 @@ const updateDetails = async function (username, password, newPassword) {
   }
 }
 
+
 //function to verify login details using Database
 app.post("/", function (req, res) {
   const username = req.body.username;
   const password = req.body.password;
+
   const valid=check(username,password)
      .then((result) => {
-
         if(result == true)
         {
           //if the user is logged in
@@ -84,13 +85,15 @@ app.post("/", function (req, res) {
         }else{
           res.sendFile(__dirname + '/SRC/views/login.html')
         }
-      
      })
      .catch((err) =>{
          console.log(err)
          res.sendFile(__dirname + '/SRC/views/login.html')
      })
+   module.exports.user_login = user_login;
+  
 });
+
 
 //function to update login details using Database
 app.post("/update", function (req, res) {

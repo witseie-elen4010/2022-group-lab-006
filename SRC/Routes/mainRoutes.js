@@ -3,23 +3,24 @@
 const path = require("path");
 const express = require("express");
 const { check } = require("express-validator");
+//const { check_user_act } = require("../..");
 const mainRouter = express.Router();
+const log_check = require("/home/sandile/Documents/2022-group-lab-006/index");
 
+//const user_login = log_check.user_login;
 //route for the single player
-
+const user_login = true;
 mainRouter.get("/singlePlayer", function (req, res) {
 
-  if(user_login==true)
-  {
-     res.sendFile(path.join(__dirname, "..", "Views", "singlePlayer.html"));
+  if (user_login == true) {
+    res.sendFile(path.join(__dirname, "..", "Views", "singlePlayer.html"));
   }
-  else if(user_login ==false)
-  {
+  else if (user_login == false) {
     res.sendFile(path.join(__dirname, "..", "Views", "login.html"));
 
   }
-  
- 
+
+
 });
 
 // Route for the login Page
@@ -35,47 +36,52 @@ mainRouter.get("/register", function (req, res) {
 
 // Route for the Home Page
 mainRouter.get("/home", function (req, res) {
-  res.sendFile(path.join(__dirname, "..", "Views", "home.html"));
+
+
+
+  if (user_login == true) {
+    res.sendFile(path.join(__dirname, "..", "Views", "home.html"));
+  }
+  else if (user_login == false) {
+    res.sendFile(path.join(__dirname, "..", "Views", "login.html"));
+
+  }
+
+
 });
 
 // Route for the Update Page
 mainRouter.get("/update", function (req, res) {
 
-  if(user_login ==true)
-  { 
-     res.sendFile(path.join(__dirname, "..", "Views", "update.html"));
+  if (user_login == true) {
+    res.sendFile(path.join(__dirname, "..", "Views", "update.html"));
   }
-  else if(user_login ==false)
-  {
+  else if (user_login == false) {
     res.sendFile(path.join(__dirname, "..", "Views", "login.html"));
   }
-  
+
 
 });
 
 // Route for the Multiplayer Page
 mainRouter.get("/multiplayer", function (req, res) {
 
-  if(user_login ==true)
-  { 
+  if (user_login == true) {
     res.sendFile(path.join(__dirname, "..", "Views", "multiPlayer.html"));
   }
-  else if(user_login ==false)
-  {
+  else if (user_login == false) {
     res.sendFile(path.join(__dirname, "..", "Views", "login.html"));
   }
-  
+
 });
 
 // Route for the Multiplayer Page
 mainRouter.get("/rules", function (req, res) {
-  if(user_login ==true)
-  { 
-      res.sendFile(path.join(__dirname, "..", "Views", "rules.html"));
+  if (user_login == true) {
+    res.sendFile(path.join(__dirname, "..", "Views", "rules.html"));
 
   }
-  else if(user_login ==false)
-  {
+  else if (user_login == false) {
     res.sendFile(path.join(__dirname, "..", "Views", "login.html"));
   }
 
