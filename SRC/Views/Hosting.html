@@ -9,6 +9,8 @@
       content="width=device-width, initial-scale=0,user-scalable=no"
     />
     <link rel="stylesheet" href="/SRC/Public/Styles/Hosting.css" />
+
+    <script type="module" src="/SRC/Public/Scripts/Hosting.js"></script>
   </head>
 
   <body>
@@ -21,7 +23,13 @@
         players can use to join the game and setup the game.
       </p>
       <br />
-      <button id="idButton">Create Game ID</button>
+
+      <div class="game_id">
+        <button id="idButton">Create Game ID</button>
+        <center>
+          <p id="gameIdOutput"></p>
+        </center>
+      </div>
 
       <br />
       <h1>Game Setup</h1>
@@ -31,6 +39,9 @@
       <input input="number" id="Players" />
       <button type="button" id="myButton">Submit</button>
       <br />
+      <br />
+      <br />
+      <input type="button" value="Save Game Details" id="Store" />
       <br />
       <br />
       <label id="playerNum">Multiplayer Mode</label><br />
@@ -48,12 +59,5 @@
         <button id="Button">Mode2</button>
       </a>
     </div>
-    <div class="game_id">
-      <p>Game ID</p>
-      <center>
-        <p id="gameIdOutput"></p>
-      </center>
-    </div>
-    <script src="/SRC/Public/Scripts/Hosting.js"></script>
   </body>
 </html>

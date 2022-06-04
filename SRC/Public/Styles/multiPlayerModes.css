@@ -10,3 +10,27 @@ body {
   font-weight: bold;
   font-size: 36px;
 }
+
+#gameProperties {
+  background-color: aquamarine;
+  height: 150px;
+  width: 170px;
+}
+
+#heading {
+  color: red;
+  font-weight: bold;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 20px;
+}
+
+#Get {
+  width: 150px;
+  height: 40px;
+  border: none;
+  border-radius: 17px;
+  background: lightgray;
+  color: black;
+  font-size: 15px;
+  font-weight: bold;
+}

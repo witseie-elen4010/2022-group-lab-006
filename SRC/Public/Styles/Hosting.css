@@ -120,15 +120,35 @@ h1 {
 
 .game_id {
   text-align: right;
-  margin-top: -26.4em;
-  margin-right: 46em;
+  margin-top: 1em;
+  margin-right: 54em;
 }
 
 #gameIdOutput {
   color: white;
-  margin-top: -1em;
+  margin-top: -1.8em;
   border: 5px solid #28c9ac;
   text-align: centre;
   width: 10%;
   margin-left: 53.4em;
+}
+
+#Store {
+  width: 150px;
+  height: 30px;
+  border: none;
+  border-radius: 17px;
+  padding-left: 7px;
+  background: lightblue;
+  color: black;
+}
+
+#Store:hover {
+  background-color: #3e8e41;
+}
+
+#Store:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
 }
