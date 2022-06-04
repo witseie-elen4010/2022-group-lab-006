@@ -6,8 +6,10 @@ get?.addEventListener(
     let id = localStorage.getItem("id");
     let mode = localStorage.getItem("mode");
     let players_ = localStorage.getItem("players_");
+    let join_id = localStorage.getItem("game_id");
 
     // console.log(second);
+    console.log(join_id);
     console.log(id);
     console.log(mode);
     console.log(players_);
