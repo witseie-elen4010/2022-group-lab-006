@@ -1,0 +1,26 @@
+html,
+body{
+    background: var(--default);
+}
+
+p{
+    color: antiquewhite;
+    place-content: center;
+    font-size:larger;
+}
+
+a{
+    color: rgb(69, 69, 199);
+}
+
+div .header{
+font-weight: bold;
+color: #9eb39c;
+}
+
+:root{
+    --default: #121213;
+    --empty: #3a3a3c;
+    --wrong: #b59f3b;
+    --right: #538d4e;
+}
