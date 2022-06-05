@@ -3,8 +3,14 @@ body{
     background: var(--default);
 }
 
-p{
-    color: antiquewhite;
+p.beginner{
+    color: green;
+    place-content: center;
+    font-size:larger;
+}
+
+p.intermediate{
+    color: orange;
     place-content: center;
     font-size:larger;
 }
