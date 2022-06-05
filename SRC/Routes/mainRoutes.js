@@ -1,25 +1,24 @@
 "use strict";
+let user_login = true;
 
 const path = require("path");
 const express = require("express");
 const { check } = require("express-validator");
 const mainRouter = express.Router();
 
-//route for the single player
+//route for the single player game levels
 
-mainRouter.get("/singlePlayer", function (req, res) {
+mainRouter.get("/levelsPage", function (req, res) {
 
   if(user_login==true)
   {
-     res.sendFile(path.join(__dirname, "..", "Views", "singlePlayer.html"));
+     res.sendFile(path.join(__dirname, "..", "Views", "levelsPage.html"));
   }
   else if(user_login ==false)
   {
     res.sendFile(path.join(__dirname, "..", "Views", "login.html"));
 
   }
-  
- 
 });
 // Route for the landing Page
 mainRouter.get("/", function (req, res) {
