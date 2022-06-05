@@ -7,12 +7,14 @@ let row = 0; //current guess (attempt number)
 let column = 0; // current letter for attempt
 
 let isGameOver = false;
+let playerWin = false;
 
 let word = "APPLE";
 
 
 const gameBoard = document.querySelector('.gameBoard');
 const Message = document.querySelector('.Message');
+const Hint = document.querySelector('.Hint');
 
 
 for (let i = 0; i < numberOfRows; i++) {
@@ -31,6 +33,12 @@ const updateMessage = function (message) {
 
 }
 
+const firstHint = function (message) {
+    const hintElement =  document.createElement('p');
+    hintElement.textContent = message;
+    Hint.append(hintElement);
+   }
+
 const inputLetter = (key) => {
   if (isGameOver) return;
 
@@ -47,6 +55,12 @@ const inputLetter = (key) => {
         const currentBlock = document.getElementById(row.toString() + "-" + column.toString());
         currentBlock.textContent = "";
     }
+
+  if (!playerWin && row == 0 && key == "enter"){
+        update();
+        firstHint("The word is a fruit")
+    }
+
   if (key == "enter" && column == 5) {
       update();
       row += 1; //start new row
