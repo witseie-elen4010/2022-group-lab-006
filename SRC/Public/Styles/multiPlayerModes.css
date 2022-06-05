@@ -5,7 +5,7 @@ body {
 
 #title {
   font-family: Arial, Helvetica, sans-serif;
-  color: magenta;
+  color: black;
   letter-spacing: 2px;
   font-weight: bold;
   font-size: 36px;
@@ -28,7 +28,7 @@ div#opponentSections {
 }
 
 div#mySection {
-  background-color: rgb(184, 204, 184);
+  background-color: darkgreen;
   width: 40%;
 }
 

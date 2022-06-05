@@ -9,10 +9,23 @@
       content="width=device-width, initial-scale=0,user-scalable=no"
     />
     <link rel="stylesheet" href="/SRC/Public/Styles/multiPlayerModes.css" />
+    <link rel="stylesheet" href="/SRC/Public/Styles/singlePlayer.css" />
+    <link rel="stylesheet" href="/SRC/Public/Styles/keyboard.css" />
     <script
       type="module"
       src="/SRC/Public/Scripts/multiPlayerMode1.js"
     ></script>
+
+    <style>
+      .gameBoard {
+        margin-left: 16rem;
+      }
+
+      .keyboard {
+        margin-left: 15.8rem;
+        margin-bottom: 10em;
+      }
+    </style>
   </head>
 
   <body>
@@ -29,10 +42,19 @@
 
     <div class="column" id="mySection">
       <p id="psection">MY SECTION</p>
+      <br />
+      <br />
+      <center>
+        <div class="gameBoard"></div>
+        <div class="keyboard"></div>
+      </center>
     </div>
 
     <div class="column" id="opponentSections">
       <p id="psection">OPPONENT 2</p>
     </div>
+
+    <script src="/SRC/Public/Scripts/singlePlayer.js"></script>
+    <script src="/SRC/Public/Scripts/keyboard.js"></script>
   </body>
 </html>
