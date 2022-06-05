@@ -9,22 +9,28 @@
       content="width=device-width, initial-scale=0,user-scalable=no"
     />
     <link rel="stylesheet" href="/SRC/Public/Styles/Hosting.css" />
+
+    <script type="module" src="/SRC/Public/Scripts/Hosting.js"></script>
   </head>
 
   <body>
-    <h1 id="title">Game Hosting</h1>
-    <hr />
-    <br />
-    <p>
-      Welcome to the hosting room! Here you can create game id, that other
-      players can use to join the game and setup the game.
-    </p>
-    <br />
+    <div class="hostInfor">
+      <h1 id="title">Game Hosting</h1>
+      <hr />
+      <br />
+      <p>
+        Welcome to the hosting room! Here you can create game id, that other
+        players can use to join the game and setup the game.
+      </p>
+      <br />
 
-    <div class="button-wrapper">
-      <a href="">
-        <button id="Button">Create Game ID</button>
-      </a>
+      <div class="game_id">
+        <button id="idButton">Create Game ID</button>
+        <center>
+          <p id="gameIdOutput">0000000</p>
+        </center>
+      </div>
+
       <br />
       <h1>Game Setup</h1>
 
@@ -35,6 +41,9 @@
       <br />
       <br />
       <br />
+      <input type="button" value="Save Game Details" id="Store" />
+      <br />
+      <br />
       <label id="playerNum">Multiplayer Mode</label><br />
       <p id="mode">
         Mode 1: all players guess a word provided by the computer.
@@ -43,13 +52,12 @@
         Mode 2: One player choose a word and other players guess it.
       </p>
 
-      <a href="">
-        <button id="Button">Mode1</button>
+      <a href="multiPlayerMode1">
+        <button class="Button" id="mode1">Mode1</button>
       </a>
-      <a href="">
-        <button id="Button">Mode2</button>
+      <a href="multiPlayerMode2">
+        <button class="Button" id="mode2">Mode2</button>
       </a>
     </div>
-    <script src="/SRC/Public/Scripts/Hosting.js"></script>
   </body>
 </html>

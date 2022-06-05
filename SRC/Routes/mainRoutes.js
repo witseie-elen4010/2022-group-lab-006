@@ -3,10 +3,12 @@ let user_login = true;
 
 const path = require("path");
 const express = require("express");
-const { check } = require("express-validator");
+const mongoose = require('mongoose');
+const app = express();
+const bodyParser = require("body-parser");
+const Users = require('/home/sandile/Documents/2022-group-lab-006/SRC/Models/user');
+const hashing = require('bcrypt');
 const mainRouter = express.Router();
-
-//route for the single player game levels
 
 mainRouter.get("/levelsPage", function (req, res) {
 
