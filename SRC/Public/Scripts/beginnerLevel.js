@@ -89,9 +89,9 @@ function update() {
       correct += 1;
       if(correct == 5){
         isGameOver = true
+        playerWin = true
         updateMessage("Congradulations You win")
       }
-      
     } // all letters are in the word in correct positions
     else if (word.includes(letter)) {
       currentBlock.classList.add("inTheWord");
