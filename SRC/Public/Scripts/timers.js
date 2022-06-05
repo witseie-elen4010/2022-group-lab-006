@@ -1,19 +1,17 @@
-
-let startTime; 
+/*
+let startTime;
 let endTime;
 
 
 //function for starting the time
 
-function start()
-{
+function start() {
     startTime = new Date();
 }
 
 //function when time ends
 
-function end()
-{
+function end() {
     endTime = new Date();
 
     let timeElapse = endTime - startTime; //in ms
@@ -21,3 +19,30 @@ function end()
     let timeElapse_seconds = Math.round(timeElapse);
     alert("It took you" + timeElapse_seconds + "to finish the game")
 }
+*/
+//countdown function for multiplayer
+const timeH = document.querySelector('h2')
+let time_seconds = 30;
+ 
+displayTime(time_seconds)
+
+const count_down = setInterval(() => {
+    time_seconds--;
+    displayTime(time_seconds);
+
+    if (time_seconds == 0 || timeElapse < 1) {
+        endCount()
+        clearInterval(count_down);
+    }
+}, 1000)
+    
+function displayTime(time_seconds) {
+    const min = Math.floor(time_seconds / 60);
+    const sec = Math.floor(time_seconds % 60);
+    timeH.innerHTML = `${min < 10 ? "0" : ""} ${min}:${sec < 10 ? "0" : ""} ${sec} `;
+}
+
+function endCount() {
+    timeH.innerHTML = "Time out";
+}
+

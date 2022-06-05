@@ -18,13 +18,14 @@
     <textarea class="use-keyboard-input" style="position: absolute; top: 130px; right: 30px; width: 300px;"></textarea>
     <div class="keyboard">
         <div class="keyboard__keys">
-            <button type="button" class="keyboard__keys">c</button>
-            <button type="button" class="keyboard__keys">b</button>
+            <button type="button" class="keyboard__keys" onkeyup="return start()">c</button>
+            <button type="button" class="keyboard__keys" onkeyup="return end()">b</button>
             <button type="button" class="keyboard__keys">
                 <i class="material-icons">backspace</i>
             </button>
         </div>
     </div>
 
-    <script src="/SRC/Public/Scripts/keyboard.js"></script>
+    <script defer src="/SRC/Public/Scripts/keyboard.js"></script>
+    <script src="/SRC/Public/Scripts/timers.js"></script>
 </body>
