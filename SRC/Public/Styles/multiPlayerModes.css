@@ -22,14 +22,18 @@ div#gameProperties {
   width: 10%;
 }
 
-div#opponentSections {
+div#opponent1Section {
   background-color: green;
-  width: 25%;
+  width: 22.5%;
+}
+div#opponent2Section {
+  background-color: rgb(23, 59, 23);
+  width: 22.5%;
 }
 
 div#mySection {
   background-color: darkgreen;
-  width: 40%;
+  width: 45%;
 }
 
 #heading {
@@ -51,7 +55,7 @@ div#mySection {
 }
 
 #psection {
-  color: black;
+  color: white;
   font-weight: bold;
   font-size: 20px;
   font-family: Arial, Helvetica, sans-serif;

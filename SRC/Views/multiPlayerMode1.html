@@ -22,7 +22,7 @@
       }
 
       .keyboard {
-        margin-left: 15.8rem;
+        margin-left: -11rem;
         margin-bottom: 10em;
       }
     </style>
@@ -36,9 +36,6 @@
       <p id="gameID">GAME ID</p>
       <p id="PlayerNo">MAX No. OF PLAYERS</p>
     </div>
-    <div class="column" id="opponentSections">
-      <p id="psection">OPPONENT 1</p>
-    </div>
 
     <div class="column" id="mySection">
       <p id="psection">MY SECTION</p>
@@ -50,8 +47,18 @@
       </center>
     </div>
 
-    <div class="column" id="opponentSections">
+    <div class="column" id="opponent1Section">
+      <p id="psection">OPPONENT 1</p>
+      <br />
+      <br />
+      <div class="gameBoard1"></div>
+    </div>
+
+    <div class="column" id="opponent2Section">
       <p id="psection">OPPONENT 2</p>
+      <br />
+      <br />
+      <div class="gameBoard2"></div>
     </div>
 
     <script src="/SRC/Public/Scripts/singlePlayer.js"></script>

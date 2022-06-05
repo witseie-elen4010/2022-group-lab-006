@@ -10,10 +10,10 @@ let isGameOver = false;
 
 let word = "APPLE";
 
-
-const gameBoard = document.querySelector('.gameBoard');
-const Message = document.querySelector('.Message');
-
+const gameBoard = document.querySelector(".gameBoard");
+const gameBoard1 = document.querySelector(".gameBoard1");
+const gameBoard2 = document.querySelector(".gameBoard2");
+const Message = document.querySelector(".Message");
 
 for (let i = 0; i < numberOfRows; i++) {
   for (let j = 0; j < numberOfColumns; j++) {
@@ -24,40 +24,60 @@ for (let i = 0; i < numberOfRows; i++) {
   }
 }
 
-const updateMessage = function (message) {
- const messageElement =  document.createElement('p');
- messageElement.textContent = message;
- Message.append(messageElement);
-
+for (let i = 0; i < numberOfRows; i++) {
+  for (let j = 0; j < numberOfColumns; j++) {
+    const block = document.createElement("span");
+    block.id = i.toString() + "-" + j.toString();
+    block.classList.add("block");
+    gameBoard1.append(block);
+  }
 }
+
+for (let i = 0; i < numberOfRows; i++) {
+  for (let j = 0; j < numberOfColumns; j++) {
+    const block = document.createElement("span");
+    block.id = i.toString() + "-" + j.toString();
+    block.classList.add("block");
+    gameBoard2.append(block);
+  }
+}
+
+const updateMessage = function (message) {
+  const messageElement = document.createElement("p");
+  messageElement.textContent = message;
+  Message.append(messageElement);
+};
 
 const inputLetter = (key) => {
   if (isGameOver) return;
 
   //alert(e.code);
-  if (column < numberOfColumns && row< numberOfRows) {
-    const currentBlock = document.getElementById(row.toString() + "-" + column.toString());
+  if (column < numberOfColumns && row < numberOfRows) {
+    const currentBlock = document.getElementById(
+      row.toString() + "-" + column.toString()
+    );
     if (currentBlock.textContent == "" && key.length == 1) {
-       currentBlock.textContent = key;
-       column += 1;
+      currentBlock.textContent = key;
+      column += 1;
     }
   }
-  if (key == "backspace" && column > 0) {
-        column-= 1
-        const currentBlock = document.getElementById(row.toString() + "-" + column.toString());
-        currentBlock.textContent = "";
-    }
+  if (key == "delete" && column > 0) {
+    column -= 1;
+    const currentBlock = document.getElementById(
+      row.toString() + "-" + column.toString()
+    );
+    currentBlock.textContent = "";
+  }
   if (key == "enter" && column == 5) {
-      update();
-      row += 1; //start new row
-      column = 0;
-    }
+    update();
+    row += 1; //start new row
+    column = 0;
+  }
 
-    if (!isGameOver && row == numberOfRows) {
-      isGameOver = true;
-      updateMessage("Better Luck Next Time")
-    }
-  
+  if (!isGameOver && row == numberOfRows) {
+    isGameOver = true;
+    updateMessage("Better Luck Next Time");
+  }
 };
 
 function update() {
@@ -73,11 +93,10 @@ function update() {
     if (word[i] == letter) {
       currentBlock.classList.add("wordCorrect");
       correct += 1;
-      if(correct == 5){
-        isGameOver = true
-        updateMessage("Congradulations You win")
+      if (correct == 5) {
+        isGameOver = true;
+        updateMessage("Congratulations You win");
       }
-      
     } // all letters are in the word in correct positions
     else if (word.includes(letter)) {
       currentBlock.classList.add("inTheWord");
@@ -86,6 +105,4 @@ function update() {
       currentBlock.classList.add("notInWord");
     }
   }
-};
-
-
+}
