@@ -16,7 +16,7 @@ mainRouter.use(
   "/SRC/Public/Scripts",
   express.static(__dirname + "/SRC/Public/Scripts")
 );
-const user_login=false;
+const user_login=true;
 // connect to mango DB
 const mangoDB = 'mongodb://mongodb-group-6:e0kJieT4LjeSE9Hr8ERriujxAAFPhIWD9Olv3onHO21zshBtm74XuOW7oZRCkegC7o4K3HzVnk2yf9OurMuZuA%3D%3D@mongodb-group-6.mongo.cosmos.azure.com:10255/?ssl=true&retrywrites=false&maxIdleTimeMS=120000&appName=@mongodb-group-6@';
 
