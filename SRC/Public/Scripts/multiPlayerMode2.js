@@ -1,5 +1,4 @@
 const get = document.getElementById("Get");
-const mode = 2;
 
 get?.addEventListener(
   "click",
@@ -7,6 +6,7 @@ get?.addEventListener(
     let id = localStorage.getItem("id");
     let players_ = localStorage.getItem("players_");
     let join_id = localStorage.getItem("game_id");
+    let mode = localStorage.getItem("gameMode");
 
     // console.log(second);
     console.log(join_id);
@@ -17,8 +17,6 @@ get?.addEventListener(
     document.getElementById("gameMode").textContent = mode;
     document.getElementById("gameID").textContent = id;
     document.getElementById("PlayerNo").textContent = players_;
-
-    //second = JSON.parse(second);
   },
   false
 );

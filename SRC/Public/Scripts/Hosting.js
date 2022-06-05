@@ -2,6 +2,7 @@
 
 const playerNum = document.getElementById("myButton");
 let numOfPlayers = 1;
+let gameMode = 0;
 playerNum?.addEventListener(
   "click",
   function () {
@@ -35,6 +36,32 @@ store?.addEventListener(
 
     console.log(id);
     console.log(players_);
+  },
+  false
+);
+
+const mode1 = document.getElementById("mode1");
+
+mode1?.addEventListener(
+  "click",
+  function () {
+    gameMode = 1;
+    localStorage.setItem("gameMode", gameMode);
+
+    console.log(gameMode);
+  },
+  false
+);
+
+const mode2 = document.getElementById("mode2");
+
+mode2?.addEventListener(
+  "click",
+  function () {
+    gameMode = 2;
+    localStorage.setItem("gameMode", gameMode);
+
+    console.log(gameMode);
   },
   false
 );
