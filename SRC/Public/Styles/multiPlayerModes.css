@@ -11,10 +11,25 @@ body {
   font-size: 36px;
 }
 
-#gameProperties {
+div {
+  height: 100vh;
+  float: left;
+  margin: 0px;
+}
+
+div#gameProperties {
   background-color: aquamarine;
-  height: 150px;
-  width: 170px;
+  width: 10%;
+}
+
+div#opponentSections {
+  background-color: green;
+  width: 25%;
+}
+
+div#mySection {
+  background-color: rgb(184, 204, 184);
+  width: 40%;
 }
 
 #heading {
@@ -33,4 +48,11 @@ body {
   color: black;
   font-size: 15px;
   font-weight: bold;
+}
+
+#psection {
+  color: black;
+  font-weight: bold;
+  font-size: 20px;
+  font-family: Arial, Helvetica, sans-serif;
 }

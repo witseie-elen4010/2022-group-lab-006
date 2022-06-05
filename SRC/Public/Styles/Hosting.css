@@ -57,7 +57,7 @@ p {
   background-color: green;
 }
 
-#Button {
+.Button {
   width: 150px;
   height: 40px;
   border: none;
@@ -67,11 +67,11 @@ p {
   color: black;
 }
 
-#Button:hover {
+.Button:hover {
   background-color: green;
 }
 
-#Button:active {
+.Button:active {
   background-color: #3e8e41;
   box-shadow: 0 5px #666;
   transform: translateY(4px);
