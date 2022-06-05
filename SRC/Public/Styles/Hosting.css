@@ -1,6 +1,10 @@
 body {
-  text-align: center;
   background-color: black;
+  text-align: center;
+}
+
+.hostInfor {
+  text-align: center;
 }
 
 #title {
@@ -53,7 +57,7 @@ p {
   background-color: green;
 }
 
-#Button {
+.Button {
   width: 150px;
   height: 40px;
   border: none;
@@ -62,8 +66,35 @@ p {
   background: lightblue;
   color: black;
 }
-#Button:hover {
+
+.Button:hover {
   background-color: green;
+}
+
+.Button:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+#idButton {
+  width: 150px;
+  height: 40px;
+  border: none;
+  border-radius: 17px;
+  padding-left: 7px;
+  background: lightblue;
+  color: black;
+}
+
+#idButton:hover {
+  background-color: green;
+}
+
+#idButton:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
 }
 
 h1 {
@@ -77,21 +108,46 @@ h1 {
   margin-left: 1rem;
 }
 
-#Button:hover {
-  background-color: #3e8e41;
-}
-
-#Button:active {
-  background-color: #3e8e41;
-  box-shadow: 0 5px #666;
-  transform: translateY(4px);
-}
-
 #myButton:hover {
   background-color: #3e8e41;
 }
 
 #myButton:active {
+  background-color: #3e8e41;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+.game_id {
+  text-align: right;
+  margin-top: 1em;
+  margin-right: 60em;
+}
+
+#gameIdOutput {
+  color: white;
+  margin-top: -1.8em;
+  border: 5px solid #28c9ac;
+  text-align: centre;
+  width: 15%;
+  margin-left: 48.4em;
+}
+
+#Store {
+  width: 150px;
+  height: 30px;
+  border: none;
+  border-radius: 17px;
+  padding-left: 7px;
+  background: lightblue;
+  color: black;
+}
+
+#Store:hover {
+  background-color: #3e8e41;
+}
+
+#Store:active {
   background-color: #3e8e41;
   box-shadow: 0 5px #666;
   transform: translateY(4px);
