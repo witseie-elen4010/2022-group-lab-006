@@ -1,7 +1,6 @@
 "use strict";
 
 const playerNum = document.getElementById("myButton");
-const gameMode = 2;
 let numOfPlayers = 1;
 playerNum?.addEventListener(
   "click",
@@ -28,15 +27,13 @@ store?.addEventListener(
   "click",
   function () {
     let id = gameID;
-    let mode = gameMode;
     let players_ = numOfPlayers;
 
+    localStorage.clear();
     localStorage.setItem("id", id);
-    localStorage.setItem("mode", mode);
     localStorage.setItem("players_", players_);
 
     console.log(id);
-    console.log(mode);
     console.log(players_);
   },
   false

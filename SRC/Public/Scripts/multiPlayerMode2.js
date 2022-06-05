@@ -1,10 +1,10 @@
 const get = document.getElementById("Get");
+const mode = 2;
 
 get?.addEventListener(
   "click",
   function () {
     let id = localStorage.getItem("id");
-    let mode = localStorage.getItem("mode");
     let players_ = localStorage.getItem("players_");
     let join_id = localStorage.getItem("game_id");
 
