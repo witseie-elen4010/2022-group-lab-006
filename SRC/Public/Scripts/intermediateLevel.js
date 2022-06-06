@@ -28,7 +28,7 @@ let column = 0; // current letter for attempt
 let isGameOver = false;
 let playerWin = false;
 
-let word = "APPLE";
+let word = secret.toUpperCase();
 
 
 const gameBoard = document.querySelector('.gameBoard');
