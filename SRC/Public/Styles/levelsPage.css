@@ -1,6 +1,6 @@
 html,
 body{
-    background: var(--default);
+    background: var(--myBackground);
 }
 
 p.beginner{
@@ -21,10 +21,11 @@ a{
 
 div .header{
 font-weight: bold;
-color: #9eb39c;
+color: #1c201b;
 }
 
 :root{
+    --myBackground: rgb(233, 224, 224);
     --default: #121213;
     --empty: #3a3a3c;
     --wrong: #b59f3b;
