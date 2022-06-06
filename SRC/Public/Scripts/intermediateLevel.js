@@ -65,6 +65,10 @@ function revealLetters(myWord){
   return "Word start with " + myWord[0] + ", ends with " + myWord[4];
 }
 
+function youLose(myWord){
+  return "Better luck next time, word is " + myWord; 
+}
+
 const inputLetter = (key) => {
   if (isGameOver) return;
 
