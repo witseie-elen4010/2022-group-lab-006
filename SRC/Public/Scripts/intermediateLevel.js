@@ -47,7 +47,6 @@ const updateMessage = function (message) {
  const messageElement =  document.createElement('p');
  messageElement.textContent = message;
  Message.append(messageElement);
-
 }
 
 const firstHint = function (message) {
@@ -55,6 +54,16 @@ const firstHint = function (message) {
     hintElement.textContent = message;
     Hint.append(hintElement);
    }
+
+function myString(myWord){
+  var val;
+  val = myWord;
+  return val;
+}
+  
+function revealLetters(myWord){
+  return "Word start with " + myWord[0] + ", ends with " + myWord[4];
+}
 
 const inputLetter = (key) => {
   if (isGameOver) return;
