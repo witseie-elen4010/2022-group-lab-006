@@ -91,11 +91,6 @@ const inputLetter = (key) => {
         firstHint(revealLetters(word))
     }
 
-    if (!playerWin && row == 1 && key == "enter"){
-        update();
-        secondHint("Word begins with an A and ends with an E")
-    }
-
     if (key == "enter" && column == 5) {
       update();
       row += 1; //start new row
@@ -104,7 +99,7 @@ const inputLetter = (key) => {
 
     if (!isGameOver && row == numberOfRows) {
       isGameOver = true;
-      updateMessage("Better Luck Next Time")
+      updateMessage(youLose(word))
     }
 };
 
