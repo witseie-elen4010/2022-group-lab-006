@@ -30,12 +30,10 @@ let playerWin = false;
 
 let word = secret.toUpperCase();
 
-
 const gameBoard = document.querySelector('.gameBoard');
 const Message = document.querySelector('.Message');
 const Hint = document.querySelector('.Hint');
 const Hint1 = document.querySelector('.Hint1');
-
 
 for (let i = 0; i < numberOfRows; i++) {
   for (let j = 0; j < numberOfColumns; j++) {
@@ -102,11 +100,6 @@ const inputLetter = (key) => {
       isGameOver = true;
       updateMessage("Better Luck Next Time")
     }
-
-    // if (!isGameOver && row == 1 && key == "enter"){
-    //     secondHint("Word begins")
-    // }
-  
 };
 
 function update() {
@@ -134,9 +127,5 @@ function update() {
     else {
       currentBlock.classList.add("notInWord");
     }
-
-    // if (row == 1 && !playerWin){
-    //     secondHint("Word begins")
-    // }
   }
 };
