@@ -18,12 +18,22 @@
 
     <style>
       .gameBoard {
-        margin-left: 16rem;
+        margin-left: 30rem;
+      }
+
+      .gameBoard1 {
+        width: 320px;
+        height: 320px;
+        margin: 0 auto;
+        margin-top: 3px;
+        display: flex;
+        flex-wrap: wrap;
+        margin-left: 4rem;
       }
 
       .keyboard {
-        margin-left: -11rem;
-        margin-bottom: 10em;
+        margin-left: 14.8rem;
+        margin-bottom: 12em;
       }
     </style>
   </head>
@@ -38,27 +48,21 @@
     </div>
 
     <div class="column" id="mySection">
-      <p id="psection">MY SECTION</p>
       <br />
       <br />
-      <center>
-        <div class="gameBoard"></div>
-        <div class="keyboard"></div>
-      </center>
+      <br />
+      <p id="myLabel">YOU</p>
+      <div class="gameBoard"></div>
+      <div class="keyboard"></div>
     </div>
 
-    <div class="column" id="opponent1Section">
-      <p id="psection">OPPONENT 1</p>
+    <div class="column" id="OpponentSection">
       <br />
       <br />
+      <br />
+      <p id="oppLabel">OPPONENT</p>
+
       <div class="gameBoard1"></div>
-    </div>
-
-    <div class="column" id="opponent2Section">
-      <p id="psection">OPPONENT 2</p>
-      <br />
-      <br />
-      <div class="gameBoard2"></div>
     </div>
 
     <script src="/SRC/Public/Scripts/singlePlayer.js"></script>

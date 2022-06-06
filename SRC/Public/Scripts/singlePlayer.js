@@ -12,7 +12,6 @@ let word = "APPLE";
 
 const gameBoard = document.querySelector(".gameBoard");
 const gameBoard1 = document.querySelector(".gameBoard1");
-const gameBoard2 = document.querySelector(".gameBoard2");
 const Message = document.querySelector(".Message");
 
 for (let i = 0; i < numberOfRows; i++) {
@@ -30,15 +29,6 @@ for (let i = 0; i < numberOfRows; i++) {
     block.id = i.toString() + "-" + j.toString();
     block.classList.add("block");
     gameBoard1.append(block);
-  }
-}
-
-for (let i = 0; i < numberOfRows; i++) {
-  for (let j = 0; j < numberOfColumns; j++) {
-    const block = document.createElement("span");
-    block.id = i.toString() + "-" + j.toString();
-    block.classList.add("block");
-    gameBoard2.append(block);
   }
 }
 
