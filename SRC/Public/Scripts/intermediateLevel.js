@@ -33,7 +33,6 @@ let word = secret.toUpperCase();
 const gameBoard = document.querySelector('.gameBoard');
 const Message = document.querySelector('.Message');
 const Hint = document.querySelector('.Hint');
-const Hint1 = document.querySelector('.Hint1');
 
 for (let i = 0; i < numberOfRows; i++) {
   for (let j = 0; j < numberOfColumns; j++) {
@@ -55,12 +54,6 @@ const firstHint = function (message) {
     const hintElement =  document.createElement('p');
     hintElement.textContent = message;
     Hint.append(hintElement);
-   }
-
-const secondHint = function (message) {
-    const hint1Element =  document.createElement('p');
-    hint1Element.textContent = message;
-    Hint1.append(hint1Element);
    }
 
 const inputLetter = (key) => {
