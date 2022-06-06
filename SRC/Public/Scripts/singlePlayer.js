@@ -11,7 +11,6 @@ let isGameOver = false;
 let word = "APPLE";
 
 const gameBoard = document.querySelector(".gameBoard");
-const gameBoard1 = document.querySelector(".gameBoard1");
 const Message = document.querySelector(".Message");
 
 for (let i = 0; i < numberOfRows; i++) {
@@ -22,7 +21,7 @@ for (let i = 0; i < numberOfRows; i++) {
     gameBoard.append(block);
   }
 }
-
+/*
 for (let i = 0; i < numberOfRows; i++) {
   for (let j = 0; j < numberOfColumns; j++) {
     const block = document.createElement("span");
@@ -31,7 +30,7 @@ for (let i = 0; i < numberOfRows; i++) {
     gameBoard1.append(block);
   }
 }
-
+*/
 const updateMessage = function (message) {
   const messageElement = document.createElement("p");
   messageElement.textContent = message;
