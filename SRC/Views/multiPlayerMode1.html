@@ -61,10 +61,28 @@
       <br />
       <br />
       <p id="oppLabel">OPPONENT</p>
-      <div class="gameBoard1"></div>
+      <div class="main">
+        <ul id="events"></ul>
+      </div>
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br /><
+      <div class="button-wrapper">
+        <form id="chat-form">
+          <input id="chat" />
+          <button id="send">Send</button>
+        </form>
+      </div>
     </div>
 
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/index.js"></script>
     <script src="/SRC/Public/Scripts/singlePlayer.js"></script>
     <script src="/SRC/Public/Scripts/keyboard.js"></script>
+    <script src="/SRC/Public/Scripts/multiPlayer.js"></script>
   </body>
 </html>

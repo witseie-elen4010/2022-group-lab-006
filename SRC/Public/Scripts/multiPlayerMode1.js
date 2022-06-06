@@ -20,14 +20,3 @@ get?.addEventListener(
   },
   false
 );
-
-const gameBoard1 = document.querySelector(".gameBoard1");
-
-for (let i = 0; i < numberOfRows; i++) {
-  for (let j = 0; j < numberOfColumns; j++) {
-    const block = document.createElement("span");
-    block.id = i.toString() + "-" + j.toString();
-    block.classList.add("block");
-    gameBoard1.append(block);
-  }
-}

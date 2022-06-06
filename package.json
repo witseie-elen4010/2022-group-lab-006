@@ -4,7 +4,8 @@
   "description": "- James Zungunde\r - Stallon Matindike\r - Sandile Kunene\r - Qhamani Mqwebedu\r - Mhlengeni Miya",
   "main": "index.js",
   "scripts": {
-    "test": "jest --coverage"
+    "test": "jest --coverage",
+    "dev": "nodemon index.js"
   },
   "repository": {
     "type": "git",
@@ -22,9 +23,10 @@
     "express": "^4.18.1",
     "express-validator": "^6.14.1",
     "mongoose": "^6.3.4",
-    "nodemon": "^2.0.16"
+    "socket.io": "^4.5.1"
   },
   "devDependencies": {
-    "jest": "^28.1.0"
+    "jest": "^28.1.0",
+    "nodemon": "^2.0.16"
   }
 }

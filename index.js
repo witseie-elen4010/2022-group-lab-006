@@ -7,6 +7,8 @@ const app = express();
 const bodyParser = require("body-parser");
 const Users = require("./SRC/Models/user");
 const hashing = require("bcrypt");
+const server = require("http").createServer(app);
+const io = require("socket.io")(server);
 
 //for checking if the user is logged in
 let user_login = false;
@@ -22,10 +24,12 @@ mongoose
   .catch((err) => console.log(err));
 
 const mainRouter = require("./SRC/Routes/mainRoutes");
+const { Socket } = require("socket.io");
 
 app.use(mainRouter);
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
+app.use(express.static("node_modules"));
 app.use("/SRC/Public/Styles", express.static(__dirname + "/SRC/Public/Styles"));
 app.use(
   "/SRC/Public/Scripts",
@@ -131,7 +135,16 @@ app.post("/register", function (req, res) {
     });
 });
 
+io.on("connection", (sock) => {
+  console.log("Someone connected");
+  sock.emit("message", "Hi, you are connected");
+
+  sock.on("message", (text) => {
+    io.emit("message", text);
+  });
+});
+
 module.exports = app;
 
-app.listen(process.env.PORT || 3000);
+server.listen(process.env.PORT || 3000);
 console.log("Express server running on port 3000");

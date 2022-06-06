@@ -1,7 +1,20 @@
 const button = document.getElementById("idButton");
-
 let game_id;
 let gameMode;
+
+const gameBoard1 = document.querySelector(".gameBoard1");
+
+function createBoard2() {
+  for (let i = 0; i < numberOfRows; i++) {
+    for (let j = 0; j < numberOfColumns; j++) {
+      const block = document.createElement("span");
+      block.id = i.toString() + "-" + j.toString();
+      block.classList.add("block");
+      gameBoard1.append(block);
+    }
+  }
+}
+
 button?.addEventListener(
   "click",
   function () {
@@ -20,8 +33,33 @@ button?.addEventListener(
     } else {
       alert("Incorrect Game ID and or Game Mode");
     }
-
-    // console.log(game_id);
   },
   false
 );
+
+const writeEvent = (text) => {
+  const parent = document.querySelector("#events");
+
+  const el = document.createElement("li");
+  el.innerHTML = text;
+
+  parent.appendChild(el);
+};
+writeEvent("Welcome to Wordle");
+
+const onFormSubmitted = (e) => {
+  e.preventDefault();
+
+  const input = document.querySelector("#chat");
+  const text = input.value;
+  input.value = "";
+
+  sock.emit("message", text);
+};
+
+const sock = io();
+sock.on("message", writeEvent);
+
+document
+  .querySelector("#chat-form")
+  .addEventListener("submit", onFormSubmitted);
