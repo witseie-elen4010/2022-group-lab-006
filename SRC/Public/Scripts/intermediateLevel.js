@@ -2,7 +2,24 @@
 
 const numberOfRows = 6; //gives number of trials
 const numberOfColumns = 5; // gives the length of the word guessed
-const dictionary = ['store', 'train', 'rates', 'earns', 'notes'];
+const dictionary = ['aries', 'astor', 'eaton', 'norse', 'norte', 'rosen', 
+'siena', 'aeons', 'aeros', 'aesir', 'airns', 'airts', 'anise', 'antes', 
+'antis', 'antre', 'arise', 'arose', 'arson', 'aster', 'astir', 'atone', 
+'aerns', 'entia', 'eosin', 'etnas', 'inert', 'inset', 'inter', 'intra', 
+'intro', 'iotas', 'irate', 'irone', 'irons', 'nares', 'naris', 'nates', 
+'nears', 'neats', 'neist', 'nerts', 'niter', 'nites', 'nitre', 'nitro', 
+'noirs', 'noise', 'noria', 'noris', 'noter', 'notes', 'oaten', 'oater', 
+'onset', 'orate', 'ornis', 'osier', 'ostia', 'rains', 'raise', 'ranis', 
+'rants', 'rates', 'ratio', 'ratos', 'reins', 'rents', 'resin', 'retia', 
+'riant', 'rinse', 'riots', 'risen', 'rites', 'roans', 'roast', 'roset', 
+'rosin', 'rotas', 'rotes', 'rotis', 'saint', 'saner', 'santo', 'sarin', 
+'satin', 'senor', 'senti', 'serai', 'serin', 'seton', 'siren', 'sitar', 
+'snare', 'snore', 'snort', 'sonar', 'stain', 'stair', 'stane', 'stare', 
+'stein', 'steno', 'stern', 'stoae', 'stoai', 'stone', 'store', 'stria', 
+'tains', 'tares', 'tarns', 'taros', 'tarsi', 'tears', 'tenia', 'tenor', 
+'terai', 'terns', 'tiers', 'tinea', 'tines', 'tires', 'tiros', 'toner', 
+'tones', 'toras', 'tores', 'torse', 'torsi', 'train', 'trans', 'tries', 
+'trine', 'trios', 'trois', 'trona', 'trone'];
 
 let secret = dictionary[Math.floor(Math.random()*dictionary.length)];
 let row = 0; //current guess (attempt number)
@@ -51,7 +68,6 @@ const secondHint = function (message) {
 const inputLetter = (key) => {
   if (isGameOver) return;
 
-  //alert(e.code);
   if (column < numberOfColumns && row< numberOfRows) {
     const currentBlock = document.getElementById(row.toString() + "-" + column.toString());
     if (currentBlock.textContent == "" && key.length == 1) {
