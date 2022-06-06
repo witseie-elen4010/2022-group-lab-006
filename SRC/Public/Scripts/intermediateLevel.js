@@ -88,7 +88,7 @@ const inputLetter = (key) => {
 
     if (!playerWin && row == 0 && key == "enter"){
         update();
-        firstHint("The word is a fruit")
+        firstHint(revealLetters(word))
     }
 
     if (!playerWin && row == 1 && key == "enter"){
