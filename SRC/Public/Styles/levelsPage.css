@@ -1,16 +1,10 @@
 html,
 body{
-    background: var(--myBackground);
+    background: var(--default);
 }
 
-p.beginner{
-    color: green;
-    place-content: center;
-    font-size:larger;
-}
-
-p.intermediate{
-    color: orange;
+p{
+    color: antiquewhite;
     place-content: center;
     font-size:larger;
 }
@@ -21,11 +15,10 @@ a{
 
 div .header{
 font-weight: bold;
-color: #1c201b;
+color: #9eb39c;
 }
 
 :root{
-    --myBackground: rgb(233, 224, 224);
     --default: #121213;
     --empty: #3a3a3c;
     --wrong: #b59f3b;
