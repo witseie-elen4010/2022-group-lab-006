@@ -10,27 +10,10 @@ let isGameOver = false;
 
 let word = "APPLE";
 
-//creating time
-let startTime;
-let endTime;
-
- function start() {
-  startTime = new Date();
-}
-//function when time ends
-function end() {
-  endTime = new Date();
-
-  let timeElapse = endTime - startTime; //in ms
-  timeElapse = timeElapse/10000
-  console.log(timeElapse)
-  alert(timeElapse)
-  
-}
-
 
 const gameBoard = document.querySelector('.gameBoard');
 const Message = document.querySelector('.Message');
+
 
 for (let i = 0; i < numberOfRows; i++) {
   for (let j = 0; j < numberOfColumns; j++) {
@@ -47,14 +30,12 @@ const updateMessage = function (message) {
  Message.append(messageElement);
 
 }
-start();
+
 const inputLetter = (key) => {
-  
- if (isGameOver) return;
+  if (isGameOver) return;
 
   //alert(e.code);
   if (column < numberOfColumns && row< numberOfRows) {
-
     const currentBlock = document.getElementById(row.toString() + "-" + column.toString());
     if (currentBlock.textContent == "" && key.length == 1) {
        currentBlock.textContent = key;
@@ -74,9 +55,7 @@ const inputLetter = (key) => {
 
     if (!isGameOver && row == numberOfRows) {
       isGameOver = true;
-      
       updateMessage("Better Luck Next Time")
-     end();
     }
   
 };
@@ -97,7 +76,6 @@ function update() {
       if(correct == 5){
         isGameOver = true
         updateMessage("Congradulations You win")
-        end();
       }
       
     } // all letters are in the word in correct positions
@@ -109,4 +87,5 @@ function update() {
     }
   }
 };
+
 
