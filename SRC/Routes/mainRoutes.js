@@ -39,8 +39,17 @@ mainRouter.get("/register", function (req, res) {
 });
 
 // Route for the Home Page
+
 mainRouter.get("/home", function (req, res) {
-  res.sendFile(path.join(__dirname, "..", "Views", "home.html"));
+  if(user_login ==true)
+  {
+    res.sendFile(path.join(__dirname, "..", "Views", "home.html"));
+  }
+  else if(user_login ==false)
+  {
+    res.sendFile(path.join(__dirname, "..", "Views", "login.html"));
+
+  }
 });
 
 // Route for the Update Page
