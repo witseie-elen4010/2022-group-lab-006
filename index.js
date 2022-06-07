@@ -58,17 +58,8 @@ io.on('connection', socket => {
   socket.on('disconnect',  () => {
      console.log('A user disconnected');
   });
-  //update across game room on server
-  socket.on('update', column =>{
-    console.log(column)
-    socket.emit('updatel', column);
-  })
-  //update color across game room on server
-  socket.on('change', (row, col, color)=>{
-    console.log(column)
-    socket.broadcast.emit('update2', row, col, color);
-  })
-  //diplay output across game room
+  
+
   socket.on('l', (l, game_id, col, row) =>{
     console.log(l)
     console.log(game_id)
@@ -81,7 +72,43 @@ io.on('connection', socket => {
       //startGame = true;
     }
   })
-  //Create game rooms
+  socket.on('del', ( l, game_id, col, row) =>{
+    //console.log(l)
+    console.log(game_id)
+    if(game_id == ""){
+      console.log("no id")
+      socket.broadcast.emit('delm', l, col, row);
+    }
+    else{
+      socket.to(game_id).emit('delm', l, col, row);
+      //startGame = true;
+    }
+  })
+  /*
+  socket.on('del', ( game_id, col, row) =>{
+    //console.log(l)
+    console.log(game_id)
+    if(game_id == ""){
+      console.log("no id")
+      socket.broadcast.emit('delm', col, row);
+    }
+    else{
+      socket.to(game_id).emit('delm', col, row);
+      //startGame = true;
+    }
+  })
+  */
+
+  socket.on('update', column =>{
+    console.log(column)
+    socket.emit('updatel', column);
+  })
+  socket.on('change', (row, col, color)=>{
+    console.log(column)
+    socket.broadcast.emit('update2', row, col, color);
+  })
+  let bl;
+  socket.emit("ch", bl);
   socket.on('join_game', game_id =>{
     console.log(game_id);
     console.log("hello");
@@ -97,6 +124,15 @@ io.on('connection', socket => {
     console.log( numUsers[game_id]);
     socket.emit("N_users", numUsers[game_id])
   })
+  /*
+  socket.on('setSocketId', function(data){
+    var userId = data.userId;
+    var userRole = data.userRole;
+    userNames[userId] = userRole;
+    console.log(userId);
+    socket.emit("userDetails", userNames)
+  })
+  */
   socket.on('setSocketId', (userId, userRole)=>{
     //var userId = data.userId;
     //var userRole = data.userRole;
@@ -105,4 +141,6 @@ io.on('connection', socket => {
     socket.emit("userDetails", userNames[userId])
   })
 });
+
+
 
