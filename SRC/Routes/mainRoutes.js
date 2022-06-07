@@ -42,6 +42,11 @@ mainRouter.get("/home", function (req, res) {
   res.sendFile(path.join(__dirname, "..", "Views", "home.html"));
 });
 
+// Route for the About Page
+mainRouter.get("/aboutPage", function (req, res) {
+  res.sendFile(path.join(__dirname, "..", "Views", "aboutPage.html"));
+});
+
 // Route for the Update Page
 mainRouter.get("/update", function (req, res) {
 
