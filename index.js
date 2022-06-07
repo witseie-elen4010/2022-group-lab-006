@@ -2,9 +2,10 @@
 
 const path = require("path");
 const express = require("express");
-const mongoose = require("mongoose");
+const mongoose = require('mongoose');
 const app = express();
 const bodyParser = require("body-parser");
+
 const Users = require("./SRC/Models/user");
 const serverResponses = require("./SRC/serverResponse");
 const hashing = require("bcrypt");
@@ -14,8 +15,7 @@ const server = require("http").createServer(app);
 let user_login = false;
 
 // connect to mango DB
-const mangoDB =
-  "mongodb://mongodb-group-6:e0kJieT4LjeSE9Hr8ERriujxAAFPhIWD9Olv3onHO21zshBtm74XuOW7oZRCkegC7o4K3HzVnk2yf9OurMuZuA%3D%3D@mongodb-group-6.mongo.cosmos.azure.com:10255/?ssl=true&retrywrites=false&maxIdleTimeMS=120000&appName=@mongodb-group-6@";
+const mangoDB ="mongodb://mongodb-group-6:e0kJieT4LjeSE9Hr8ERriujxAAFPhIWD9Olv3onHO21zshBtm74XuOW7oZRCkegC7o4K3HzVnk2yf9OurMuZuA%3D%3D@mongodb-group-6.mongo.cosmos.azure.com:10255/?ssl=true&retrywrites=false&maxIdleTimeMS=120000&appName=@mongodb-group-6@";
 
 //using mangoose to interact with mangoDB Database
 mongoose
@@ -25,6 +25,7 @@ mongoose
 
 const mainRouter = require("./SRC/Routes/mainRoutes");
 const { Socket } = require("socket.io");
+
 
 app.use(mainRouter);
 app.use(bodyParser.json());
@@ -145,3 +146,4 @@ module.exports = app;
 
 server.listen(process.env.PORT || 3000);
 console.log("Express server running on port 3000");
+

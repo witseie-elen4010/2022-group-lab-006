@@ -10,6 +10,7 @@ let isGameOver = false;
 
 let word = "APPLE";
 
+
 const gameBoard = document.querySelector(".gameBoard");
 const Message = document.querySelector(".Message");
 
@@ -30,21 +31,25 @@ for (let i = 0; i < numberOfRows; i++) {
     gameBoard1.append(block);
   }
 }
-*/
+
 const updateMessage = function (message) {
   const messageElement = document.createElement("p");
   messageElement.textContent = message;
   Message.append(messageElement);
 };
 
+
 const inputLetter = (key) => {
-  if (isGameOver) return;
+  
+ if (isGameOver) return;
 
   //alert(e.code);
+
   if (column < numberOfColumns && row < numberOfRows) {
     const currentBlock = document.getElementById(
       row.toString() + "-" + column.toString()
     );
+
     if (currentBlock.textContent == "" && key.length == 1) {
       currentBlock.textContent = key;
       column += 1;
@@ -67,6 +72,7 @@ const inputLetter = (key) => {
     isGameOver = true;
     updateMessage("Better Luck Next Time");
   }
+
 };
 
 function update() {
@@ -82,9 +88,11 @@ function update() {
     if (word[i] == letter) {
       currentBlock.classList.add("wordCorrect");
       correct += 1;
+
       if (correct == 5) {
         isGameOver = true;
         updateMessage("Congratulations You win");
+
       }
     } // all letters are in the word in correct positions
     else if (word.includes(letter)) {
