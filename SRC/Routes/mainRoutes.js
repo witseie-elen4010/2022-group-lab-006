@@ -144,6 +144,18 @@ mainRouter.get("/multi", function (req, res) {
     res.sendFile(path.join(__dirname, "..", "Views", "login.html"));
   }
 });
+mainRouter.get("/multi", function (req, res) {
+
+  if(user_login==true)
+  {
+     res.sendFile(path.join(__dirname, "..", "Views", "multi.html"));
+  }
+  else if(user_login ==false)
+  {
+    res.sendFile(path.join(__dirname, "..", "Views", "login.html"));
+
+  }
+});
 
 //route for Levels Page
 mainRouter.get("/levelsPage", function (req, res) {
