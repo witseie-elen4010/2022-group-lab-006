@@ -10,7 +10,23 @@ let isGameOver = false;
 let playerWin = false;
 
 let word = "APPLE";
+//creating time
+let startTime;
+let endTime;
 
+ function start() {
+  startTime = new Date();
+}
+//function when time ends
+function end() {
+  endTime = new Date();
+
+  let timeElapse = endTime - startTime; //in ms
+  timeElapse = timeElapse/1000
+  console.log(timeElapse)
+  alert('You took ' +timeElapse + ' seconds to finish the game')
+  
+}
 
 const gameBoard = document.querySelector('.gameBoard');
 const Message = document.querySelector('.Message');
@@ -39,6 +55,7 @@ const firstHint = function (message) {
     Hint.append(hintElement);
    }
 
+   start();
 const inputLetter = (key) => {
   if (isGameOver) return;
 
@@ -70,6 +87,7 @@ const inputLetter = (key) => {
     if (!isGameOver && row == numberOfRows) {
       isGameOver = true;
       updateMessage("Better Luck Next Time")
+      end();
     }
   
 };
@@ -91,6 +109,7 @@ function update() {
         isGameOver = true
         playerWin = true
         updateMessage("Congradulations You win")
+        end();
       }
     } // all letters are in the word in correct positions
     else if (word.includes(letter)) {
