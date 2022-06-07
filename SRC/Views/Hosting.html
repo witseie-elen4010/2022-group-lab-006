@@ -32,16 +32,7 @@
       </div>
 
       <br />
-      <h1>Game Setup</h1>
-
-      <label id="playerNum">Number of players</label><br />
-      <br />
-      <input input="number" id="Players" />
-      <button type="button" id="myButton">Submit</button>
-      <br />
-      <br />
-      <br />
-      <input type="button" value="Save Game Details" id="Store" />
+      <input type="button" value="Save Game ID" id="Store" />
       <br />
       <br />
       <label id="playerNum">Multiplayer Mode</label><br />
@@ -52,12 +43,15 @@
         Mode 2: One player choose a word and other players guess it.
       </p>
 
-      <a href="multiPlayerMode1">
+      <a href="Lobby">
         <button class="Button" id="mode1">Mode1</button>
       </a>
-      <a href="multiPlayerMode2">
+      <a href="Lobby">
         <button class="Button" id="mode2">Mode2</button>
       </a>
+      <br />
     </div>
+
+    <script src="/socket.io/socket.io.js"></script>
   </body>
 </html>

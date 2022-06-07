@@ -9,25 +9,84 @@
       content="width=device-width, initial-scale=0,user-scalable=no"
     />
     <link rel="stylesheet" href="/SRC/Public/Styles/multiPlayerModes.css" />
+    <link rel="stylesheet" href="/SRC/Public/Styles/singlePlayer.css" />
+    <link rel="stylesheet" href="/SRC/Public/Styles/keyboard.css" />
     <script
       type="module"
       src="/SRC/Public/Scripts/multiPlayerMode1.js"
     ></script>
-    <script defer src="/SRC/Public/Scripts/timer.js"></script>
+
+
+    <style>
+      .gameBoard {
+        margin-left: 20rem;
+      }
+
+      .gameBoard1 {
+        width: 320px;
+        height: 320px;
+        margin: 0 auto;
+        margin-top: 3px;
+        display: flex;
+        flex-wrap: wrap;
+        margin-left: 4rem;
+      }
+
+      .keyboard {
+        margin-left: 14.8rem;
+        margin-bottom: 2em;
+      }
+
+      #send {
+        margin-left: 30rem;
+      }
+    </style>
   </head>
 
   <body>
     <h1 id="title">Multi-Player Mode 1</h1>
-<section>
-  <div class="container">
-    <h2 style="color: white;">00:00</h2>
-  </div>
-</section>
-    <div id="gameProperties">
+
+    <div id="gameProperties" class="InforSection">
       <button id="Get">PROPERTIES</button>
       <p id="gameMode">GAME MODE</p>
       <p id="gameID">GAME ID</p>
-      <p id="PlayerNo">MAX No. OF PLAYERS</p>
     </div>
+
+    <div class="column" id="mySection">
+      <br />
+      <br />
+      <br />
+      <p id="myLabel">YOU</p>
+      <div class="gameBoard"></div>
+      <ul id="test"></ul>
+      <div class="keyboard"></div>
+    </div>
+
+    <div class="column" id="OpponentSection">
+      <br />
+      <br />
+      <br />
+      <p id="oppLabel">OPPONENT</p>
+      <div class="main">
+        <ul id="events"></ul>
+      </div>
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br />
+      <br /><
+      <div class="button-wrapper">
+        <form id="chat-form">
+          <button id="send">Send</button>
+        </form>
+      </div>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/SRC/Public/Scripts/singlePlayer.js"></script>
+    <script src="/SRC/Public/Scripts/keyboard.js"></script>
+    <script src="/SRC/Public/Scripts/multiPlayer.js"></script>
   </body>
 </html>

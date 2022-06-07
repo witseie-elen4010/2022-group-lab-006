@@ -5,16 +5,31 @@ body {
 
 #title {
   font-family: Arial, Helvetica, sans-serif;
-  color: magenta;
+  color: black;
   letter-spacing: 2px;
   font-weight: bold;
   font-size: 36px;
 }
 
-#gameProperties {
+div {
+  height: 90vh;
+  float: left;
+  margin: 0px;
+}
+
+div#gameProperties {
   background-color: aquamarine;
-  height: 150px;
-  width: 170px;
+  width: 10%;
+}
+
+div#mySection {
+  background-color: rgb(23, 59, 23);
+  width: 45%;
+}
+
+div#OpponentSection {
+  background-color: green;
+  width: 45%;
 }
 
 #heading {
@@ -33,4 +48,20 @@ body {
   color: black;
   font-size: 15px;
   font-weight: bold;
+}
+
+#myLabel {
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-left: 24rem;
+}
+
+#oppLabel {
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-left: -28rem;
 }
