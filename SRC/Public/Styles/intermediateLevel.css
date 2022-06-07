@@ -1,0 +1,70 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    background-color: green;
+  }
+  
+  #mode {
+    color: white;
+    letter-spacing: 2px;
+    font-weight: bold;
+    font-size: 36px;
+  }
+  
+  hr {
+    width: 800px;
+  }
+  
+  .gameBoard {
+    width: 320px;
+    height: 320px;
+    margin: 0 auto;
+    margin-top: 3px;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .block {
+    color: black;
+    font-size: 16px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid pink;
+    width: 45px;
+    height: 45px;
+    margin: 2.5px;
+  }
+  
+  .wordCorrect {
+    background-color: #6aa646;
+    color: white;
+    border-color: white;
+  }
+  
+  .inTheWord {
+    background-color: #c9b458;
+    color: white;
+    border-color: white;
+  }
+  
+  .notInWord {
+    background-color: #787c7e;
+    color: white;
+    border-color: white;
+  }
+  
+  .Message {
+    color: red;
+    letter-spacing: 2px;
+    font-weight: bold;
+    font-size: 16px
+  }  
+
+  .Hint {
+    color: red;
+    letter-spacing: 2px;
+    font-weight: bold;
+    font-size: 16px
+  } 
