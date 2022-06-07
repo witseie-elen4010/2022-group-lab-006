@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Competitive Wordle G6</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=0,user-scalable=no"
+    />
+    
+    <link rel="shortcut icon" href="#">
+    <link rel="stylesheet" href="/SRC/Public/Styles/singlePlayer.css" />
+    <link rel="stylesheet" href="/SRC/Public/Styles/key.css">
+    <link rel="stylesheet" href="/SRC/Public/Styles/Hosting.css" />
+    <link rel="stylesheet" type="text/css" href="/SRC/Public/Styles/landing.css">
+  </head>
+  <body>
+    <h1 id="title">Multi-Player-Mode</h1>
+    <hr />
+    <br />
+    <p id = "para">
+      Welcome to the Multi Player Mode of Competive Wordle, Click "Host", to
+      host a game for multiple players or "Join" to join a game hosted by
+      another player.
+    </p>
+    <br />
+
+    <div class="button-wrapper">
+      
+        <button id="host">Host</button>
+      
+     
+        <button id="join">Join</button>
+      
+    </div>
+  </body>
+  <body>
+    <h1 id="mode">Multiplayer Player Mode</h1>
+    <hr />
+    <br />
+    <div id = "boards" class="row">
+        <div class="column1">
+            <div id="gameBoard"></div>
+          <br><br>
+          <br><br>
+        </div>
+        <div class="column2">
+            <div id="gameBoard1"></div>
+          <br><br>
+          <br><br>
+        </div>
+      </div>
+    
+    <br></br>
+    <br></br>
+    <h2 id = "game_win">Congratulations you have won</h2>
+    <h2 id = "game_lose">You have used up all your guesses. The correct word is: </h2>
+    <h1 id="correctWord"></h1>
+    <div id="keyboard-container">
+      <div class="keyboard-row">
+        <button data-key="q">q</button>
+        <button data-key="w">w</button>
+        <button data-key="e">e</button>
+        <button data-key="r">r</button>
+        <button data-key="t">t</button>
+        <button data-key="y">y</button>
+        <button data-key="u">u</button>
+        <button data-key="i">i</button>
+        <button data-key="o">o</button>
+        <button data-key="p">p</button>
+      </div>
+      <div class="keyboard-row">
+        <div class="spacer-half"></div>
+        <button data-key="a">a</button>
+        <button data-key="s">s</button>
+        <button data-key="d">d</button>
+        <button data-key="f">f</button>
+        <button data-key="g">g</button>
+        <button data-key="h">h</button>
+        <button data-key="j">j</button>
+        <button data-key="k">k</button>
+        <button data-key="l">l</button>
+        <div class="spacer-half"></div>
+      </div>
+      <div class="keyboard-row">
+        <button data-key="enter" class="wide-button">Enter</button>
+        <button data-key="z">z</button>
+        <button data-key="x">x</button>
+        <button data-key="c">c</button>
+        <button data-key="v">v</button>
+        <button data-key="b">b</button>
+        <button data-key="n">n</button>
+        <button data-key="m">m</button>
+        <button data-key="del" class="wide-button">Del</button>
+      </div>
+    </div>
+    <div id = "keyboard-container"></div>
+    
+    
+    <script src = "/socket.io/socket.io.js"></script>
+    <script  type="module" src="/SRC/Public/Scripts/mult.js"></script>
+  </body>
+  
+
+
+
+   
+
+
+</html>
+
