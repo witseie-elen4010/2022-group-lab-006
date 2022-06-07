@@ -5,7 +5,7 @@ const express = require("express");
 const mongoose = require('mongoose');
 const app = express();
 const bodyParser = require("body-parser");
-const Users = require('/home/sandile/Documents/2022-group-lab-006/SRC/Models/user');
+const Users = require('./Models/user');
 const hashing = require('bcrypt');
 const mainRouter = express.Router();
 
@@ -16,7 +16,7 @@ mainRouter.use(
   "/SRC/Public/Scripts",
   express.static(__dirname + "/SRC/Public/Scripts")
 );
-const user_login=true;
+const user_login=false;
 // connect to mango DB
 const mangoDB = 'mongodb://mongodb-group-6:e0kJieT4LjeSE9Hr8ERriujxAAFPhIWD9Olv3onHO21zshBtm74XuOW7oZRCkegC7o4K3HzVnk2yf9OurMuZuA%3D%3D@mongodb-group-6.mongo.cosmos.azure.com:10255/?ssl=true&retrywrites=false&maxIdleTimeMS=120000&appName=@mongodb-group-6@';
 
@@ -154,8 +154,17 @@ mainRouter.get("/register", function (req, res) {
 });
 
 // Route for the Home Page
+
 mainRouter.get("/home", function (req, res) {
-  res.sendFile(path.join(__dirname, "..", "Views", "home.html"));
+  if(user_login ==true)
+  {
+    res.sendFile(path.join(__dirname, "..", "Views", "home.html"));
+  }
+  else if(user_login ==false)
+  {
+    res.sendFile(path.join(__dirname, "..", "Views", "login.html"));
+
+  }
 });
 
 // Route for the Update Page

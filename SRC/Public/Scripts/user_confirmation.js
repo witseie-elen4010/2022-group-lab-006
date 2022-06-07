@@ -7,6 +7,7 @@ var number = document.getElementById("number");
 var len = document.getElementById("length_");
 var special_char = document.getElementById("special_char");
 const password2 = document.getElementById("password2");
+const newPassword = document.getElementById("newpassword");
 const email = document.getElementById("email");
 
 //preventing the form to submit before entering valid information
