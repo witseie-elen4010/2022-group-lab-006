@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Competitive Wordle G6</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=0,user-scalable=no"
+    />
+    <link rel="stylesheet" href="/SRC/Public/Styles/Hosting.css" />
+
+    <script type="module" src="/SRC/Public/Scripts/lobby.js"></script>
+
+    <style>
+      .detailsBox {
+        height: 150px;
+        list-style: none;
+        display: flex;
+        width: 400px;
+        flex-flow: column;
+        background: #eee;
+        border-radius: 6px;
+
+        box-shadow: 1px 0px 10px #eee;
+      }
+
+      p {
+        color: purple;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="lobby">
+      <h1 id="title">Welcome to the Lobby</h1>
+      <hr />
+      <br />
+
+      <br />
+      <div id="gamedetails">
+        <br />
+        <br />
+        <center>
+          <button class="Button" id="getGameDetails">Game Details</button>
+          <br />
+          <br />
+          <div class="detailsBox">
+            <ul id="details"></ul>
+          </div>
+        </center>
+        <br />
+        <br />
+
+        <button class="Button" id="startGame">Start Game</button>
+      </div>
+    </div>
+  </body>
+  <script src="/socket.io/socket.io.js"></script>
+</html>
