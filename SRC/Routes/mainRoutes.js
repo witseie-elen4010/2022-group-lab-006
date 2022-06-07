@@ -6,7 +6,7 @@ const express = require("express");
 const mongoose = require('mongoose');
 const app = express();
 const bodyParser = require("body-parser");
-const Users = require('/home/sandile/Documents/2022-group-lab-006/SRC/Models/user');
+const Users = require('./Models/user');
 const hashing = require('bcrypt');
 const mainRouter = express.Router();
 
