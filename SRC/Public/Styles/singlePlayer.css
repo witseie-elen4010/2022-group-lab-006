@@ -23,8 +23,29 @@ hr {
   display: flex;
   flex-wrap: wrap;
 }
+.gameBoard1 {
+  width: 320px;
+  height: 320px;
+  margin: 0 auto;
+  margin-top: 3px;
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: 6rem;
+}
 
 .block {
+  color: black;
+  font-size: 16px;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid pink;
+  width: 45px;
+  height: 45px;
+  margin: 2.5px;
+}
+.block1 {
   color: black;
   font-size: 16px;
   font-weight: bold;
@@ -59,7 +80,5 @@ hr {
   color: red;
   letter-spacing: 2px;
   font-weight: bold;
-  font-size: 16px
-
+  font-size: 16px;
 }
-

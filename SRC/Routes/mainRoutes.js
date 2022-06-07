@@ -137,6 +137,13 @@ mainRouter.get("/singlePlayer", function (req, res) {
     res.sendFile(path.join(__dirname, "..", "Views", "login.html"));
   }
 });
+mainRouter.get("/multi", function (req, res) {
+  if (user_login == true) {
+    res.sendFile(path.join(__dirname, "..", "Views", "multi.html"));
+  } else if (user_login == false) {
+    res.sendFile(path.join(__dirname, "..", "Views", "login.html"));
+  }
+});
 
 //route for Levels Page
 mainRouter.get("/levelsPage", function (req, res) {
@@ -205,10 +212,6 @@ mainRouter.get("/rules", function (req, res) {
   } else if (user_login == false) {
     res.sendFile(path.join(__dirname, "..", "Views", "login.html"));
   }
-});
-
-mainRouter.get("/Lobby", function (req, res) {
-  res.sendFile(path.join(__dirname, "..", "Views", "Lobby.html"));
 });
 
 mainRouter.get("/Hosting", function (req, res) {
