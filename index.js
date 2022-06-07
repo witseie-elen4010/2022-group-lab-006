@@ -6,9 +6,9 @@ const mongoose = require("mongoose");
 const app = express();
 const bodyParser = require("body-parser");
 const Users = require("./SRC/Models/user");
+const serverResponses = require("./SRC/serverResponse");
 const hashing = require("bcrypt");
 const server = require("http").createServer(app);
-const io = require("socket.io")(server);
 
 //for checking if the user is logged in
 let user_login = false;
@@ -135,13 +135,10 @@ app.post("/register", function (req, res) {
     });
 });
 
-io.on("connection", (sock) => {
-  console.log("Someone connected");
-  sock.emit("message", "Hi, you are connected");
+const io = require("socket.io")(server);
 
-  sock.on("message", (text) => {
-    io.emit("message", text);
-  });
+io.on("connection", (sock) => {
+  serverResponses.Initialize(io, sock);
 });
 
 module.exports = app;

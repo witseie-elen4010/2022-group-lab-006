@@ -1,8 +1,11 @@
-const button = document.getElementById("idButton");
 let game_id;
 let gameMode;
-
+const sock = io();
 const gameBoard1 = document.querySelector(".gameBoard1");
+const button = document.getElementById("idButton");
+
+//EVENT LISTENERS
+button?.addEventListener("click", joinGame, false);
 
 function createBoard2() {
   for (let i = 0; i < numberOfRows; i++) {
@@ -15,28 +18,46 @@ function createBoard2() {
   }
 }
 
-button?.addEventListener(
-  "click",
-  function () {
-    game_id = window.prompt("Please Enter Game ID");
-    gameMode = window.prompt("Please Enter Game Mode");
+function joinGame() {
+  game_id = window.prompt("Please Enter Game ID");
 
-    let mode = localStorage.getItem("gameMode");
-    let id = localStorage.getItem("id");
+  if (game_id === "") {
+    alert("Game ID can't be empty");
+    return;
+  }
+  gameMode = window.prompt("Please Enter Game Mode");
+  if (gameMode === "") {
+    alert("Game Mode can't be empty");
+    return;
+  }
 
-    if (id === game_id && gameMode == mode && gameMode == 1) {
-      console.log("Hi, Mode 1 here");
-      location.replace("/multiPlayerMode1");
-    } else if (id === game_id && gameMode == mode && gameMode == 2) {
-      console.log("Hi, Mode 2 here");
-      location.replace("/multiPlayerMode2");
-    } else {
-      alert("Incorrect Game ID and or Game Mode");
-    }
-  },
-  false
-);
+  function replace() {
+    location.replace("/lobby");
+  }
 
+  let mode = localStorage.getItem("gameMode");
+  let id = localStorage.getItem("id");
+
+  if (id === game_id && gameMode == mode && gameMode == 1) {
+    console.log("Hi, Mode 1 here");
+    alert("Correct!");
+
+    //sock.emit("opponentJoin", joiningDetails);
+    replace();
+  } else if (id === game_id && gameMode == mode && gameMode == 2) {
+    console.log("Hi, Mode 2 here");
+    alert("Correct!");
+    location.replace("/Lobby");
+    alert("Welcome");
+  } else if (id != game_id && gameMode != mode && gameMode != 2) {
+    alert(
+      "Game ID and or Game Mode does not exist, Please ask the Host to share it with you"
+    );
+  } else {
+    return;
+  }
+}
+/*
 const writeEvent = (text) => {
   const parent = document.querySelector("#events");
 
@@ -45,21 +66,23 @@ const writeEvent = (text) => {
 
   parent.appendChild(el);
 };
-writeEvent("Welcome to Wordle");
 
 const onFormSubmitted = (e) => {
   e.preventDefault();
-
-  const input = document.querySelector("#chat");
-  const text = input.value;
-  input.value = "";
-
-  sock.emit("message", text);
+  const text = "Hi there dawg";
+  sock.emit("addBoard", text);
 };
 
-const sock = io();
-sock.on("message", writeEvent);
+//SOCKET LISTENERS
+
+//sock.on("addBoard", writeEvent);
+//sock.on("gameHosted", displayDetails);
+/*
+function displayDetails(details) {
+  console.log(details, "From Server multi");
+}
 
 document
   .querySelector("#chat-form")
   .addEventListener("submit", onFormSubmitted);
+*/

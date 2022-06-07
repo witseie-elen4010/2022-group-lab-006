@@ -1,67 +1,49 @@
 "use strict";
 
-const playerNum = document.getElementById("myButton");
-let numOfPlayers = 1;
 let gameMode = 0;
-playerNum?.addEventListener(
-  "click",
-  function () {
-    numOfPlayers = document.getElementById("Players").value;
-  },
-  false
-);
-
-const button = document.getElementById("idButton");
 const gameID = Math.floor(Math.random() * 10000000) + 1000000;
-
-button?.addEventListener(
-  "click",
-  function () {
-    document.getElementById("gameIdOutput").textContent = gameID;
-  },
-  false
-);
-
+const sock = io();
+const button = document.getElementById("idButton");
 const store = document.getElementById("Store");
-
-store?.addEventListener(
-  "click",
-  function () {
-    let id = gameID;
-    let players_ = numOfPlayers;
-
-    localStorage.clear();
-    localStorage.setItem("id", id);
-    localStorage.setItem("players_", players_);
-
-    console.log(id);
-    console.log(players_);
-  },
-  false
-);
-
 const mode1 = document.getElementById("mode1");
-
-mode1?.addEventListener(
-  "click",
-  function () {
-    gameMode = 1;
-    localStorage.setItem("gameMode", gameMode);
-
-    console.log(gameMode);
-  },
-  false
-);
-
 const mode2 = document.getElementById("mode2");
 
-mode2?.addEventListener(
-  "click",
-  function () {
-    gameMode = 2;
-    localStorage.setItem("gameMode", gameMode);
+//const input = document.getElementById("test");
 
-    console.log(gameMode);
-  },
-  false
-);
+//SOCKET LISTENERS
+
+//sock.on("gameHosted", mode2Handler);
+
+//EVENT LISTENERS
+button?.addEventListener("click", gameIdHandler, false);
+store?.addEventListener("click", iDstorageHandler, false);
+mode1?.addEventListener("click", mode1Handler, false);
+mode2?.addEventListener("click", mode2Handler, false);
+
+function gameIdHandler() {
+  document.getElementById("gameIdOutput").textContent = gameID;
+}
+
+function iDstorageHandler() {
+  let id = gameID;
+  localStorage.clear();
+  localStorage.setItem("id", id);
+  console.log(id);
+  //sock.emit("gameHosted", id);
+}
+
+function mode1Handler() {
+  gameMode = 1;
+  localStorage.setItem("gameMode", gameMode);
+  //console.log(gameMode);
+  //  const details = gameID;
+  // console.log(gameID);
+}
+
+function mode2Handler() {
+  gameMode = 2;
+  localStorage.setItem("gameMode", gameMode);
+  //console.log(gameMode);
+  const details = gameID;
+  //sock.emit("gameHosted", details);
+}

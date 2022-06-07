@@ -64,6 +64,10 @@ mainRouter.get("/Hosting", function (req, res) {
   res.sendFile(path.join(__dirname, "..", "Views", "Hosting.html"));
 });
 
+mainRouter.get("/Lobby", function (req, res) {
+  res.sendFile(path.join(__dirname, "..", "Views", "Lobby.html"));
+});
+
 mainRouter.get("/multiPlayerMode1", function (req, res) {
   res.sendFile(path.join(__dirname, "..", "Views", "multiPlayerMode1.html"));
 });

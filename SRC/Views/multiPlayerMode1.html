@@ -18,7 +18,7 @@
 
     <style>
       .gameBoard {
-        margin-left: 30rem;
+        margin-left: 20rem;
       }
 
       .gameBoard1 {
@@ -33,7 +33,11 @@
 
       .keyboard {
         margin-left: 14.8rem;
-        margin-bottom: 12em;
+        margin-bottom: 2em;
+      }
+
+      #send {
+        margin-left: 30rem;
       }
     </style>
   </head>
@@ -44,7 +48,6 @@
       <button id="Get">PROPERTIES</button>
       <p id="gameMode">GAME MODE</p>
       <p id="gameID">GAME ID</p>
-      <p id="PlayerNo">MAX No. OF PLAYERS</p>
     </div>
 
     <div class="column" id="mySection">
@@ -53,6 +56,7 @@
       <br />
       <p id="myLabel">YOU</p>
       <div class="gameBoard"></div>
+      <ul id="test"></ul>
       <div class="keyboard"></div>
     </div>
 
@@ -73,14 +77,12 @@
       <br /><
       <div class="button-wrapper">
         <form id="chat-form">
-          <input id="chat" />
           <button id="send">Send</button>
         </form>
       </div>
     </div>
 
     <script src="/socket.io/socket.io.js"></script>
-    <script src="/index.js"></script>
     <script src="/SRC/Public/Scripts/singlePlayer.js"></script>
     <script src="/SRC/Public/Scripts/keyboard.js"></script>
     <script src="/SRC/Public/Scripts/multiPlayer.js"></script>
