@@ -1,11 +1,11 @@
 body {
   font-family: Arial, Helvetica, sans-serif;
   text-align: center;
-  background-color: white;
+  background-color: green;
 }
 
 #mode {
-  color: black;
+  color: white;
   letter-spacing: 2px;
   font-weight: bold;
   font-size: 36px;
@@ -23,7 +23,6 @@ hr {
   display: flex;
   flex-wrap: wrap;
 }
-
 #gameBoard1 {
   width: 320px;
   height: 320px;
@@ -41,7 +40,19 @@ hr {
   display: flex;
   justify-content: center;
   align-items: center;
-  border: 2px solid black;
+  border: 2px solid pink;
+  width: 45px;
+  height: 45px;
+  margin: 2.5px;
+}
+.block1 {
+  color: black;
+  font-size: 16px;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid pink;
   width: 45px;
   height: 45px;
   margin: 2.5px;
@@ -66,10 +77,8 @@ hr {
 }
 
 .Message {
-  color: black;
+  color: red;
   letter-spacing: 2px;
   font-weight: bold;
-  font-size: 16px
-
+  font-size: 16px;
 }
-
