@@ -145,15 +145,10 @@ mainRouter.get("/multi", function (req, res) {
   }
 });
 mainRouter.get("/multi", function (req, res) {
-
-  if(user_login==true)
-  {
-     res.sendFile(path.join(__dirname, "..", "Views", "multi.html"));
-  }
-  else if(user_login ==false)
-  {
+  if (user_login == true) {
+    res.sendFile(path.join(__dirname, "..", "Views", "multi.html"));
+  } else if (user_login == false) {
     res.sendFile(path.join(__dirname, "..", "Views", "login.html"));
-
   }
 });
 
@@ -228,6 +223,10 @@ mainRouter.get("/rules", function (req, res) {
 
 mainRouter.get("/Hosting", function (req, res) {
   res.sendFile(path.join(__dirname, "..", "Views", "Hosting.html"));
+});
+
+mainRouter.get("/multi", function (req, res) {
+  res.sendFile(path.join(__dirname, "..", "Views", "multi.html"));
 });
 
 module.exports = mainRouter;
