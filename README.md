@@ -7,3 +7,4 @@
 - Sandile Kunene
 - Qhamani Mqwebedu
 - Mhlengeni Miya
+- http://competitive-wordle-g6.azurewebsites.net/
