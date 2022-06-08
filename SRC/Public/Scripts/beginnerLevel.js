@@ -1,7 +1,5 @@
 "use strict";
 
-import { KeyColour } from "./keyboard2";
-
 const numberOfRows = 6; //gives number of trials
 const numberOfColumns = 5; // gives the length of the word guessed
 
@@ -48,7 +46,6 @@ const updateMessage = function (message) {
  const messageElement =  document.createElement('p');
  messageElement.textContent = message;
  Message.append(messageElement);
- setTimeout(() => Message.removeChild(messageElement),2000);
 
 }
 
@@ -56,11 +53,10 @@ const firstHint = function (message) {
     const hintElement =  document.createElement('p');
     hintElement.textContent = message;
     Hint.append(hintElement);
-    setTimeout(() => Hint.removeChild(hintElement),2000);
    }
 
    start();
-export const inputLetter1 = (key) => {
+const inputLetter = (key) => {
   if (isGameOver) return;
 
   //alert(e.code);
@@ -107,11 +103,9 @@ function update() {
 
     //a letter is in correct position
     if (word[i] == letter) {
-      KeyColour(letter,"GREEN");
       currentBlock.classList.add("wordCorrect");
       correct += 1;
       if(correct == 5){
-        KeyColour(letter,"YELLOW")
         isGameOver = true
         playerWin = true
         updateMessage("Congradulations You win")
