@@ -1,5 +1,12 @@
 "use strict";
 
+import { FiveLetterWord } from "./word_generator.js";
+import { WordIsValid } from "./word_generator.js";
+import { KeyColour } from "./keyboard.js";
+//import { FileRead } from "./store_actions.js";
+
+const username = Cookies.get('username');
+console.log(username);
 const numberOfRows = 6; //gives number of trials
 const numberOfColumns = 5; // gives the length of the word guessed
 
@@ -7,27 +14,9 @@ let row = 0; //current guess (attempt number)
 let column = 0; // current letter for attempt
 
 let isGameOver = false;
+const wordEntered = [];
 
-let word = "APPLE";
-
-//creating time
-let startTime;
-let endTime;
-
- function start() {
-  startTime = new Date();
-}
-//function when time ends
-function end() {
-  endTime = new Date();
-
-  let timeElapse = endTime - startTime; //in ms
-  timeElapse = timeElapse/10000
-  console.log(timeElapse)
-  alert('You took ' +timeElapse + ' seconds to finish the game')
-  
-}
-
+const word = FiveLetterWord().toUpperCase();
 
 const gameBoard = document.querySelector('.gameBoard');
 const Message = document.querySelector('.Message');
@@ -45,38 +34,42 @@ const updateMessage = function (message) {
  const messageElement =  document.createElement('p');
  messageElement.textContent = message;
  Message.append(messageElement);
+ setTimeout(() => Message.removeChild(messageElement),2000);
 
 }
-start();
-const inputLetter = (key) => {
-  
- if (isGameOver) return;
+
+export const inputLetter = (key) => {
+  if (isGameOver) return;
 
   //alert(e.code);
   if (column < numberOfColumns && row< numberOfRows) {
-
     const currentBlock = document.getElementById(row.toString() + "-" + column.toString());
     if (currentBlock.textContent == "" && key.length == 1) {
        currentBlock.textContent = key;
        column += 1;
     }
   }
-  if (key == "backspace" && column > 0) {
+  if (key == "delete" && column > 0) {
         column-= 1
         const currentBlock = document.getElementById(row.toString() + "-" + column.toString());
         currentBlock.textContent = "";
     }
   if (key == "enter" && column == 5) {
-      update();
-      row += 1; //start new row
-      column = 0;
+    for (let i = 0; i<numberOfColumns;i++){
+      const currentBlock = document.getElementById(
+        row.toString() + "-" + i.toString()
+      );
+     wordEntered.push(currentBlock.innerText)
+     console.log(wordEntered.join(''));
+     console.log(WordIsValid(wordEntered.join('').toLowerCase()));
+    }
+        storeCookie(wordEntered.join(''));  
+        wordEntered.length =0;
     }
 
     if (!isGameOver && row == numberOfRows) {
       isGameOver = true;
-      
       updateMessage("Better Luck Next Time")
-     end();
     }
   
 };
@@ -94,14 +87,15 @@ function update() {
     if (word[i] == letter) {
       currentBlock.classList.add("wordCorrect");
       correct += 1;
+      KeyColour(letter,"GREEN");
       if(correct == 5){
         isGameOver = true
         updateMessage("Congradulations You win")
-        end();
       }
       
     } // all letters are in the word in correct positions
     else if (word.includes(letter)) {
+      KeyColour(letter,"YELLOW")
       currentBlock.classList.add("inTheWord");
     } //letter is in not in the word
     else {
@@ -109,4 +103,62 @@ function update() {
     }
   }
 };
+
+// function for storing cookies with user move information.
+function storeCookie(wordEntered) {
+  if (wordEntered == word && WordIsValid(wordEntered.toLowerCase()) == true) {
+    update();
+    let current = new Date();
+    console.log(current.toLocaleDateString());
+    console.log(current.toLocaleTimeString());
+    const action = {
+      Username: username,
+      DateOfAction: current.toLocaleDateString(),
+      TimeOfAction: current.toLocaleTimeString(),
+      WordEntry: wordEntered,
+      IsEntryValid: true,
+      IsEntryCorrect:true,
+    }
+    Cookies.set(current.toLocaleTimeString(), JSON.stringify(action), { expires: 36500 });
+    console.log(current.toLocaleTimeString());
+    row += 1; //start new row
+    column = 0;
+  }
+  else if (wordEntered != word && WordIsValid(wordEntered.toLowerCase()) == true){
+    update();
+    let current = new Date();
+    console.log(current.toLocaleDateString());
+    console.log(current.toLocaleTimeString());
+    const action = {
+      Username: username,
+      DateOfAction: current.toLocaleDateString(),
+      TimeOfAction: current.toLocaleTimeString(),
+      WordEntry: wordEntered,
+      IsEntryValid: true,
+      IsEntryCorrect:false,
+    }
+    Cookies.set(current.toLocaleTimeString(), JSON.stringify(action), { expires: 36500 });
+    console.log(current.toLocaleTimeString());
+    row += 1; //start new row
+    column = 0;
+  }
+  else{
+    let current = new Date();
+    console.log(current.toLocaleDateString());
+    console.log(current.toLocaleTimeString());
+    const action = {
+      Username: username,
+      DateOfAction: current.toLocaleDateString(),
+      TimeOfAction: current.toLocaleTimeString(),
+      WordEntry: wordEntered,
+      IsEntryValid: true,
+      IsEntryCorrect:false,
+    }
+    Cookies.set(current.toLocaleTimeString(), JSON.stringify(action), { expires: 36500 });
+    console.log(current.toLocaleTimeString());
+    updateMessage("Invalid Entry: Please enter a valid word")
+  }
+
+}
+
 

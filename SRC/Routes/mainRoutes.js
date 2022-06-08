@@ -72,19 +72,20 @@ const updateDetails = async function (username, password, newPassword) {
 mainRouter.post("/", function (req, res) {
   const username = req.body.username;
   const password = req.body.password;
-  const valid = check(username, password)
-    .then((result) => {
-      if (result == true) {
-        user_login = true;
-        res.sendFile(path.join(__dirname, "..", "Views", "home.html"));
-      } else {
-        res.sendFile(path.join(__dirname, "..", "Views", "login.html"));
-      }
-    })
-    .catch((err) => {
-      console.log(err);
-      res.sendFile(path.join(__dirname, "..", "Views", "beginnerLevel.html"));
-    });
+  const valid=check(username,password)
+     .then((result) => {
+        if(result == true)
+        {
+          user_login =true;
+          res.sendFile(path.join(__dirname, "..", "Views", "home.html"))
+        }else{
+          res.sendFile(path.join(__dirname, "..", "Views", "login.html"))
+        }
+     })
+     .catch((err) =>{
+         console.log(err)
+         res.sendFile(path.join(__dirname, "..", "Views", "login.html"))
+     })
 });
 
 //function to update login details using Database
@@ -131,9 +132,12 @@ mainRouter.post("/register", function (req, res) {
 //route for the single player
 
 mainRouter.get("/singlePlayer", function (req, res) {
-  if (user_login == true) {
-    res.sendFile(path.join(__dirname, "..", "Views", "levelsPage.html"));
-  } else if (user_login == false) {
+  if(user_login==true)
+  {
+     res.sendFile(path.join(__dirname, "..", "Views", "singlePlayer.html"));
+  }
+  else if(user_login ==false)
+  {
     res.sendFile(path.join(__dirname, "..", "Views", "login.html"));
   }
 });

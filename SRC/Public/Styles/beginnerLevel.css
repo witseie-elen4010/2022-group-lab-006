@@ -1,7 +1,7 @@
 body {
     font-family: Arial, Helvetica, sans-serif;
     text-align: center;
-    background-color: green;
+    background-color: white;
   }
   
   #mode {
@@ -56,14 +56,14 @@ body {
   }
   
   .Message {
-    color: red;
+    color: black;
     letter-spacing: 2px;
     font-weight: bold;
     font-size: 16px
   }  
 
   .Hint {
-    color: red;
+    color: black;
     letter-spacing: 2px;
     font-weight: bold;
     font-size: 16px
