@@ -78,7 +78,7 @@ mainRouter.post("/", function (req, res) {
      })
      .catch((err) =>{
          console.log(err)
-         res.sendFile(path.join(__dirname, "..", "Views", "beginnerLevel.html"))
+         res.sendFile(path.join(__dirname, "..", "Views", "login.html"))
      })
 });
 
@@ -129,7 +129,7 @@ mainRouter.get("/singlePlayer", function (req, res) {
 
   if(user_login==true)
   {
-     res.sendFile(path.join(__dirname, "..", "Views", "levelsPage.html"));
+     res.sendFile(path.join(__dirname, "..", "Views", "singlePlayer.html"));
   }
   else if(user_login ==false)
   {
