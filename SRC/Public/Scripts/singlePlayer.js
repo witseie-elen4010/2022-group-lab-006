@@ -5,8 +5,7 @@ import { WordIsValid } from "./word_generator.js";
 import { KeyColour } from "./keyboard.js";
 //import { FileRead } from "./store_actions.js";
 
-const username = Cookies.get('username');
-console.log(username);
+
 const numberOfRows = 6; //gives number of trials
 const numberOfColumns = 5; // gives the length of the word guessed
 
@@ -25,7 +24,7 @@ for (let i = 0; i < numberOfRows; i++) {
   for (let j = 0; j < numberOfColumns; j++) {
     const block = document.createElement("span");
     block.id = i.toString() + "-" + j.toString();
-    block.classList.add("block2");
+    block.classList.add("block");
     gameBoard.append(block);
   }
 }
@@ -106,6 +105,7 @@ function update() {
 
 // function for storing cookies with user move information.
 function storeCookie(wordEntered) {
+  let username = "test";
   if (wordEntered == word && WordIsValid(wordEntered.toLowerCase()) == true) {
     update();
     let current = new Date();
@@ -119,7 +119,6 @@ function storeCookie(wordEntered) {
       IsEntryValid: true,
       IsEntryCorrect:true,
     }
-    Cookies.set(current.toLocaleTimeString(), JSON.stringify(action), { expires: 36500 });
     console.log(current.toLocaleTimeString());
     row += 1; //start new row
     column = 0;
@@ -137,7 +136,6 @@ function storeCookie(wordEntered) {
       IsEntryValid: true,
       IsEntryCorrect:false,
     }
-    Cookies.set(current.toLocaleTimeString(), JSON.stringify(action), { expires: 36500 });
     console.log(current.toLocaleTimeString());
     row += 1; //start new row
     column = 0;
@@ -154,7 +152,6 @@ function storeCookie(wordEntered) {
       IsEntryValid: true,
       IsEntryCorrect:false,
     }
-    Cookies.set(current.toLocaleTimeString(), JSON.stringify(action), { expires: 36500 });
     console.log(current.toLocaleTimeString());
     updateMessage("Invalid Entry: Please enter a valid word")
   }
