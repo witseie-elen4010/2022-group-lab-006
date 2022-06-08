@@ -15,7 +15,7 @@ hr {
   width: 800px;
 }
 
-.gameBoard {
+#gameBoard {
   width: 320px;
   height: 320px;
   margin: 0 auto;
@@ -23,7 +23,7 @@ hr {
   display: flex;
   flex-wrap: wrap;
 }
-.gameBoard1 {
+#gameBoard1 {
   width: 320px;
   height: 320px;
   margin: 0 auto;
